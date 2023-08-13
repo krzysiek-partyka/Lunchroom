@@ -1,0 +1,15 @@
+D:\lunchroomMVC\Lunchroom.Application\bin\Debug\net7.0\Lunchroom.Application.deps.json
+D:\lunchroomMVC\Lunchroom.Application\bin\Debug\net7.0\Lunchroom.Application.dll
+D:\lunchroomMVC\Lunchroom.Application\bin\Debug\net7.0\Lunchroom.Application.pdb
+D:\lunchroomMVC\Lunchroom.Application\bin\Debug\net7.0\Lunchroom.Domain.dll
+D:\lunchroomMVC\Lunchroom.Application\bin\Debug\net7.0\Lunchroom.Domain.pdb
+D:\lunchroomMVC\Lunchroom.Application\obj\Debug\net7.0\Lunchroom.Application.csproj.AssemblyReference.cache
+D:\lunchroomMVC\Lunchroom.Application\obj\Debug\net7.0\Lunchroom.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\lunchroomMVC\Lunchroom.Application\obj\Debug\net7.0\Lunchroom.Application.AssemblyInfoInputs.cache
+D:\lunchroomMVC\Lunchroom.Application\obj\Debug\net7.0\Lunchroom.Application.AssemblyInfo.cs
+D:\lunchroomMVC\Lunchroom.Application\obj\Debug\net7.0\Lunchroom.Application.csproj.CoreCompileInputs.cache
+D:\lunchroomMVC\Lunchroom.Application\obj\Debug\net7.0\Lunchroom.Application.csproj.CopyComplete
+D:\lunchroomMVC\Lunchroom.Application\obj\Debug\net7.0\Lunchroom.Application.dll
+D:\lunchroomMVC\Lunchroom.Application\obj\Debug\net7.0\refint\Lunchroom.Application.dll
+D:\lunchroomMVC\Lunchroom.Application\obj\Debug\net7.0\Lunchroom.Application.pdb
+D:\lunchroomMVC\Lunchroom.Application\obj\Debug\net7.0\ref\Lunchroom.Application.dll

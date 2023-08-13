@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Lunchroom.MVC.props" />
+</Project>
