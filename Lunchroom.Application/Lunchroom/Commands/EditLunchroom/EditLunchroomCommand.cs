@@ -9,10 +9,6 @@ namespace Lunchroom.Application.Lunchroom.Commands.EditLunchroom
 {
     public class EditLunchroomCommand : LunchroomDto, IRequest
     {
-        //public string EncodedName { get; set; }
-        //public EditLunchroomCommand(string encodedName)
-        //{
-        //    EncodedName = encodedName;
-        //}
+        
     }
 }

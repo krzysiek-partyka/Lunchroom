@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Lunchroom.Application.ApplicationUser;
 using Lunchroom.Domain.Interfaces;
 using MediatR;
 using System;
@@ -13,17 +14,25 @@ namespace Lunchroom.Application.Lunchroom.Commands.EditLunchroom
     {
         private readonly ILunchroomRepository _lunchroomRepository;
         private readonly IMapper _mapper;
+        private readonly IUserContext _userContext;
 
-        public EditLunchroomCommandHandler(ILunchroomRepository lunchroomRepository, IMapper mapper)
+        public EditLunchroomCommandHandler(ILunchroomRepository lunchroomRepository, IMapper mapper,IUserContext userContext)
         {
             _lunchroomRepository = lunchroomRepository;
             _mapper = mapper;
+            _userContext = userContext;
         }
 
         public async Task<Unit> Handle(EditLunchroomCommand request, CancellationToken cancellationToken)
         {
             var lunchroom = await _lunchroomRepository.GetByEncodedName(request.EncodedName!);
-            //lunchroom.Name = request.Name;
+
+            var user = _userContext.GetCurrentUser();
+            var isEditable = user != null && lunchroom.CreatedById == user.Id;
+            if (isEditable)
+            {
+                return Unit.Value;
+            }
             lunchroom.Description= request.Description;
             lunchroom.ContactDetails.Phone = request.Phone;
             lunchroom.ContactDetails.PostalCode = request.PostalCode;

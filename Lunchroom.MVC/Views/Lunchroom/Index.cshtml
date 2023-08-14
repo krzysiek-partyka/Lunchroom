@@ -55,7 +55,11 @@
                 @Html.DisplayFor(modelItem => item.Phone)
             </td>
             <td>
-                <a class="btn btn-secondary" asp-controller="Lunchroom" asp-action="Edit" asp-route-encodedName="@item.EncodedName">Edit</a> |
+                    @if (item.IsEditable)
+                    {
+                        <a class="btn btn-secondary" asp-controller="Lunchroom" asp-action="Edit" asp-route-encodedName="@item.EncodedName">Edit</a>
+                    }
+                 |
                 <a class="btn btn-secondary" asp-controller="Lunchroom" asp-action="Details" asp-route-encodedName="@item.EncodedName">Detalis</a>
                 <a class="btn btn-secondary" asp-controller="Student" asp-action="Index" asp-route-encodedName="@item.EncodedName">Detalis</a>
             </td>

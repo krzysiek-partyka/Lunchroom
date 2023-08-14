@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Lunchroom.Application.ApplicationUser;
 using Lunchroom.Application.Lunchroom;
 using Lunchroom.Application.Lunchroom.Commands.EditLunchroom;
 using Lunchroom.Application.Student;
@@ -13,8 +14,9 @@ namespace Lunchroom.Application.Mappings
 {
     public class LunchroomMappingProfile : Profile
     {
-        public LunchroomMappingProfile()
+        public LunchroomMappingProfile(IUserContext userContext)
         {
+            var user = userContext.GetCurrentUser();
             CreateMap<LunchroomDto, Domain.Entities.Lunchroom>()
                  .ForMember(e => e.ContactDetails, opt => opt.MapFrom(src => new LunchroomContactDetails
                  {
@@ -25,6 +27,7 @@ namespace Lunchroom.Application.Mappings
                  }));
 
             CreateMap<Domain.Entities.Lunchroom, LunchroomDto>()
+                .ForMember(e => e.IsEditable,opt => opt.MapFrom(src => (src.CreatedById == user.Id && user != null)))
                 .ForMember(e => e.Street, opt => opt.MapFrom(src => src.ContactDetails.Street))
                 .ForMember(e => e.City, opt => opt.MapFrom(src => src.ContactDetails.City))
                 .ForMember(e => e.PostalCode, opt => opt.MapFrom(src => src.ContactDetails.PostalCode))

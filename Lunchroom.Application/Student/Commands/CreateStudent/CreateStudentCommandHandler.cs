@@ -25,7 +25,7 @@ namespace Lunchroom.Application.Student.Commands.CreateStudent
         public async Task<Unit> Handle(CreateStudentCommand request, CancellationToken cancellationToken)
         {
             var student = _mapper.Map<Domain.Entities.Student>(request);
-            //student.LunchroomId =
+            
             
             await _studentRepository.Create(student);
             return Unit.Value;

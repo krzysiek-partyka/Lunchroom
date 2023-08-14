@@ -6,8 +6,11 @@ using Lunchroom.Application.Lunchroom.Queries.GetAllLunchrooms;
 using Lunchroom.Application.Lunchroom.Queries.GetLunchroomByEncodedName;
 using Lunchroom.Application.Services;
 using Lunchroom.Domain.Interfaces;
+using Lunchroom.MVC.Extensions;
+using Lunchroom.MVC.Models;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace Lunchroom.MVC.Controllers
 {
@@ -41,6 +44,10 @@ namespace Lunchroom.MVC.Controllers
         public async Task<IActionResult> Edit(string encodedName)
         {
             var dto = await _mediator.Send(new GetLunchroomByEncodedNameQuery(encodedName));
+            if(!dto.IsEditable)
+            {
+                return RedirectToAction("NoAccess","Home");
+            }
             EditLunchroomCommand model = _mapper.Map<EditLunchroomCommand>(dto);
             return View(model); ;
         }
@@ -60,9 +67,12 @@ namespace Lunchroom.MVC.Controllers
         {
             if(!ModelState.IsValid)
             {
-                return View(command);
+                return BadRequest(ModelState);
             }
+
             await _mediator.Send(command);
+
+            this.SetNotification("succsess", $"Created Carworkshop {command.Name}");
             return RedirectToAction(nameof(Index));
         } 
     }
