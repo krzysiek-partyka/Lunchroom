@@ -24,9 +24,14 @@ namespace Lunchroom.Application.Lunchroom.Commands.CreateLunchroom
         }
         public async Task<Unit> Handle(CreateLunchroomCommand request, CancellationToken cancellationToken)
         {
+            var currentUser = _userContext.GetCurrentUser();
+            if (currentUser == null || !currentUser.IsInRole("Owner"))
+            {
+                return Unit.Value;
+            }
             var lunchroom = _mapper.Map<Domain.Entities.Lunchroom>(request);
             lunchroom.EncodeName();
-            lunchroom.CreatedById = _userContext.GetCurrentUser().Id;
+            lunchroom.CreatedById = currentUser.Id;
             await _lunchroomRepository.Create(lunchroom);
             return Unit.Value;
         }

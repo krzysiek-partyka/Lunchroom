@@ -36,8 +36,9 @@ namespace Lunchroom.Application.ApplicationUser
             }
             var id = user.FindFirst(u => u.Type == ClaimTypes.NameIdentifier)?.Value;
             var email = user.FindFirst(u => u.Type == ClaimTypes.Email)?.Value;
+            var roles = user.Claims.Where(u => u.Type == ClaimTypes.Role).Select(u => u.Value);
 
-            var currenrUser = new CurrentUser(id, email);
+            var currenrUser = new CurrentUser(id, email, roles);
 
             return currenrUser;
         }

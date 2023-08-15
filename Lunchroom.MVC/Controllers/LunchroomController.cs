@@ -9,6 +9,7 @@ using Lunchroom.Domain.Interfaces;
 using Lunchroom.MVC.Extensions;
 using Lunchroom.MVC.Models;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -57,12 +58,15 @@ namespace Lunchroom.MVC.Controllers
             var dto = await  _mediator.Send(new GetLunchroomByEncodedNameQuery(encodedName));
             return View(dto);
         }
+
+        [Authorize(Roles = ("Owner"))]
         public IActionResult Create()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize(Roles =("Owner"))]
         public async Task<IActionResult> Create(CreateLunchroomCommand command)
         {
             if(!ModelState.IsValid)

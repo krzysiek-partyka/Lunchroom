@@ -22,6 +22,7 @@ namespace Lunchroom.Infrastructure.Extensions
             options.UseSqlServer(configuration
             .GetConnectionString("LunchroomDb")));
             service.AddDefaultIdentity<IdentityUser>()
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<LunchroomDbContext>();
             service.AddScoped<LunchroomSeeder>();
             service.AddScoped<ILunchroomRepository, LunchroomRepository>();

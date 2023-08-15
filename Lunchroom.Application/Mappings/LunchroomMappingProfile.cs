@@ -27,7 +27,7 @@ namespace Lunchroom.Application.Mappings
                  }));
 
             CreateMap<Domain.Entities.Lunchroom, LunchroomDto>()
-                .ForMember(e => e.IsEditable,opt => opt.MapFrom(src => (src.CreatedById == user.Id && user != null)))
+                .ForMember(e => e.IsEditable,opt => opt.MapFrom(src => (user != null && (user.IsInRole("Moderator") || src.CreatedById == user.Id) )))
                 .ForMember(e => e.Street, opt => opt.MapFrom(src => src.ContactDetails.Street))
                 .ForMember(e => e.City, opt => opt.MapFrom(src => src.ContactDetails.City))
                 .ForMember(e => e.PostalCode, opt => opt.MapFrom(src => src.ContactDetails.PostalCode))

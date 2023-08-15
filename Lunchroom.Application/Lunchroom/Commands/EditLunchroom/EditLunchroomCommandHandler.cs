@@ -28,8 +28,8 @@ namespace Lunchroom.Application.Lunchroom.Commands.EditLunchroom
             var lunchroom = await _lunchroomRepository.GetByEncodedName(request.EncodedName!);
 
             var user = _userContext.GetCurrentUser();
-            var isEditable = user != null && lunchroom.CreatedById == user.Id;
-            if (isEditable)
+            var isEditable = user != null && (lunchroom.CreatedById == user.Id || user.IsInRole("Moderator"));
+            if (!isEditable)
             {
                 return Unit.Value;
             }
