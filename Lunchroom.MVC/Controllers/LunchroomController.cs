@@ -74,9 +74,10 @@ namespace Lunchroom.MVC.Controllers
                 return BadRequest(ModelState);
             }
 
-            await _mediator.Send(command);
+            //await _mediator.Send(command);
 
-            this.SetNotification("succsess", $"Created Carworkshop {command.Name}");
+            this.SetNotification("success", $"Created Lunchroom {command.Name}");
+
             return RedirectToAction(nameof(Index));
         } 
     }
