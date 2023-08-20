@@ -9,6 +9,7 @@ namespace Lunchroom.Application.Student.Commands.CreateStudent
 {
     public class CreateStudentCommand : StudentDto, IRequest
     {
-       
+        public string LunchroomEncodedName { get; set; } = default!;
+
     }
 }

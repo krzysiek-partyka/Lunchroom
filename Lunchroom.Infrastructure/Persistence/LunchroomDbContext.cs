@@ -23,6 +23,11 @@ namespace Lunchroom.Infrastructure.Persistence
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Domain.Entities.Lunchroom>()
                 .OwnsOne(l => l.ContactDetails);
+
+            modelBuilder.Entity<Domain.Entities.Lunchroom>()
+                .HasMany(x => x.Student)
+                .WithOne(x => x.Lunchroom)
+                .HasForeignKey(x => x.LunchroomId);
         }
     }
 }

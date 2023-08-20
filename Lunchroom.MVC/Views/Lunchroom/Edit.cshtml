@@ -1,4 +1,5 @@
-﻿@model Lunchroom.Application.Lunchroom.Commands.EditLunchroom.EditLunchroomCommand
+﻿@using Lunchroom.Application.Student.Commands.CreateStudent;
+@model Lunchroom.Application.Lunchroom.Commands.EditLunchroom.EditLunchroomCommand
 
 @{
     ViewData["Title"] = "Edit";
@@ -43,10 +44,19 @@
     </div>
 </div>
 
+
+<!-- Button trigger modal -->
+
+
 <div>
+    <partial name="_CreateStudent" model="new CreateStudentCommand(){LunchroomEncodedName = Model.EncodedName}"/>
     <a asp-action="Index" class="btn btn-secondary">Back to List</a>
 </div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script src="~/js/Lunchroom/Edit.js">
+        
+    </script>
 }

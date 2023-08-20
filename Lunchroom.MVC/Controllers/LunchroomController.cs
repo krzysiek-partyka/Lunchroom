@@ -5,6 +5,7 @@ using Lunchroom.Application.Lunchroom.Commands.EditLunchroom;
 using Lunchroom.Application.Lunchroom.Queries.GetAllLunchrooms;
 using Lunchroom.Application.Lunchroom.Queries.GetLunchroomByEncodedName;
 using Lunchroom.Application.Services;
+using Lunchroom.Application.Student.Commands.CreateStudent;
 using Lunchroom.Domain.Interfaces;
 using Lunchroom.MVC.Extensions;
 using Lunchroom.MVC.Models;
@@ -74,11 +75,27 @@ namespace Lunchroom.MVC.Controllers
                 return BadRequest(ModelState);
             }
 
-            //await _mediator.Send(command);
+            await _mediator.Send(command);
 
             this.SetNotification("success", $"Created Lunchroom {command.Name}");
 
             return RedirectToAction(nameof(Index));
-        } 
+        }
+        [HttpPost]
+        [Authorize(Roles = ("Owner"))]
+        [Route("Lunchroom/CreateStudent")]
+        public async Task<IActionResult> CreateStudent(CreateStudentCommand command)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            await _mediator.Send(command);
+
+            
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

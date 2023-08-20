@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\lunchroomMVC\\Lunchroom.MVC\\wwwroot\\js\\Lunchroom\\Edit.js",
+      "PackagePath": "staticwebassets\\js\\Lunchroom\\Edit.js"
+    },
+    {
       "Id": "D:\\lunchroomMVC\\Lunchroom.MVC\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

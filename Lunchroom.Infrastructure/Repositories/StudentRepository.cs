@@ -1,4 +1,5 @@
-﻿using Lunchroom.Domain.Entities;
+﻿using Lunchroom.Application.Student;
+using Lunchroom.Domain.Entities;
 using Lunchroom.Domain.Interfaces;
 using Lunchroom.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
@@ -18,19 +19,15 @@ namespace Lunchroom.Infrastructure.Repositories
         {
             _dbContext = dbContext;
         }
-        public async Task Commit()
-        {
-            await _dbContext.SaveChangesAsync();
-        }
+        
 
 
-        public async Task Create(Student student)
+        public async Task CreateStudent(Student student)
         {
             _dbContext.Add(student);
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<Student>> GetAll(string encodeName) =>
-            await _dbContext.Students.ToListAsync();
+        
     }
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Vxfp2X0ZCUJtLK4T4QBQI2lpR2kiRule3FlBF4guapo=",
+  "Hash": "idFpYDtEhARkWJ32T94RE7vTLFgCS3XoEZXTAc7rH7s=",
   "Source": "Lunchroom.MVC",
   "BasePath": "_content/Lunchroom.MVC",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\lunchroomMVC\\Lunchroom.MVC\\wwwroot\\js\\Lunchroom\\Edit.js",
+      "SourceId": "Lunchroom.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\lunchroomMVC\\Lunchroom.MVC\\wwwroot\\",
+      "BasePath": "_content/Lunchroom.MVC",
+      "RelativePath": "js/Lunchroom/Edit.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Lunchroom\\Edit.js"
     },
     {
       "Identity": "D:\\lunchroomMVC\\Lunchroom.MVC\\wwwroot\\js\\site.js",

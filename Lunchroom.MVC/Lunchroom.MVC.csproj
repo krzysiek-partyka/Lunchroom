@@ -19,4 +19,9 @@
     <ProjectReference Include="..\Lunchroom.Infrastructure\Lunchroom.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Student\" />
+    <Folder Include="wwwroot\js\Lunchroom\" />
+  </ItemGroup>
+
 </Project>

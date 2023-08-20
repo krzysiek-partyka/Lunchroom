@@ -86,6 +86,7 @@ namespace Lunchroom.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("LunchroomId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int>("NumberOfLunches")
@@ -342,7 +343,9 @@ namespace Lunchroom.Infrastructure.Migrations
                 {
                     b.HasOne("Lunchroom.Domain.Entities.Lunchroom", "Lunchroom")
                         .WithMany("Student")
-                        .HasForeignKey("LunchroomId");
+                        .HasForeignKey("LunchroomId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Lunchroom");
                 });
