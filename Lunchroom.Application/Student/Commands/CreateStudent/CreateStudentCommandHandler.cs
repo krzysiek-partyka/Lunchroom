@@ -16,7 +16,6 @@ namespace Lunchroom.Application.Student.Commands.CreateStudent
     {
         private readonly IStudentRepository _studentRepository;
         private readonly IUserContext _userContext;
-        private readonly IMapper _mapper;
         private readonly ILunchroomRepository _lunchroomRepository;
 
         public CreateStudentCommandHandler(IStudentRepository studentRepository, IUserContext userContext ,ILunchroomRepository lunchroomRepository)
@@ -38,7 +37,7 @@ namespace Lunchroom.Application.Student.Commands.CreateStudent
             }
             
             
-            var enumValue = (int)request.ClassroomName;
+            var enumValue = (int)request.ClassroomName!;
             var student = new Domain.Entities.Student()
             {
                 FirstName = request.FirstName,

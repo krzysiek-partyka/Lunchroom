@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ZbP/FjA6Apc2R9iC7lTGWyt5waL3wKJTJ38U8YZSYb7hLrpU/HqkQ8lscJVrndi9OCiSjwu0tdZLFp7OqjczKw==",
+  "dgSpecHash": "9veWwdAh9Y5wpmncTeeqatMZsZqPFvSx/mbPrSrhDHDzgodR/BlGGds0gxotUPAXFsmgxw+KuiLFW5IlldoiQA==",
   "success": true,
   "projectFilePath": "D:\\lunchroomMVC\\Lunchroom.MVC\\Lunchroom.MVC.csproj",
   "expectedPackageFiles": [
@@ -91,10 +91,10 @@
     "C:\\Users\\2021\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.10\\microsoft.entityframeworkcore.7.0.10.nupkg.sha512",
     "C:\\Users\\2021\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.10\\microsoft.entityframeworkcore.abstractions.7.0.10.nupkg.sha512",
     "C:\\Users\\2021\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.10\\microsoft.entityframeworkcore.analyzers.7.0.10.nupkg.sha512",
-    "C:\\Users\\2021\\.nuget\\packages\\microsoft.entityframeworkcore.design\\7.0.10\\microsoft.entityframeworkcore.design.7.0.10.nupkg.sha512",
+    "C:\\Users\\2021\\.nuget\\packages\\microsoft.entityframeworkcore.design\\7.0.9\\microsoft.entityframeworkcore.design.7.0.9.nupkg.sha512",
     "C:\\Users\\2021\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.10\\microsoft.entityframeworkcore.relational.7.0.10.nupkg.sha512",
     "C:\\Users\\2021\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\7.0.10\\microsoft.entityframeworkcore.sqlserver.7.0.10.nupkg.sha512",
-    "C:\\Users\\2021\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\7.0.10\\microsoft.entityframeworkcore.tools.7.0.10.nupkg.sha512",
+    "C:\\Users\\2021\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\7.0.9\\microsoft.entityframeworkcore.tools.7.0.9.nupkg.sha512",
     "C:\\Users\\2021\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\2021\\.nuget\\packages\\microsoft.extensions.caching.memory\\7.0.0\\microsoft.extensions.caching.memory.7.0.0.nupkg.sha512",
     "C:\\Users\\2021\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",

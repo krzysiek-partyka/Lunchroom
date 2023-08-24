@@ -6,6 +6,7 @@ using Lunchroom.Application.Lunchroom.Queries.GetAllLunchrooms;
 using Lunchroom.Application.Lunchroom.Queries.GetLunchroomByEncodedName;
 using Lunchroom.Application.Services;
 using Lunchroom.Application.Student.Commands.CreateStudent;
+using Lunchroom.Application.Student.Queries.GetAllStudents;
 using Lunchroom.Domain.Interfaces;
 using Lunchroom.MVC.Extensions;
 using Lunchroom.MVC.Models;
@@ -96,6 +97,14 @@ namespace Lunchroom.MVC.Controllers
             
 
             return RedirectToAction(nameof(Index));
+        }
+
+        [HttpGet]
+        [Route("Lunchroom/{enodedName}/GetStudent")]
+        public async Task<IActionResult> GetStudents(string enodedName)
+        {
+            await _mediator.Send(new LunchroomGetStudentQuery() { EncodedName = enodedName });
+            return Ok();
         }
     }
 }
