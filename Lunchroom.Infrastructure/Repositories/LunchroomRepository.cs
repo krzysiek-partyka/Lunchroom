@@ -21,22 +21,22 @@ namespace Lunchroom.Infrastructure.Repositories
         public async Task Commit() =>
             await _dbContext.SaveChangesAsync();
 
-        public async Task Create(Domain.Entities.Lunchroom lunchroom)
+        public async Task Create(Domain.Entities.Meal lunchroom)
         {
             _dbContext.Add(lunchroom);
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<Domain.Entities.Lunchroom> Edit(Domain.Entities.Lunchroom lunchroom, string encodedName) =>
+        public async Task<Domain.Entities.Meal> Edit(Domain.Entities.Meal lunchroom, string encodedName) =>
             await _dbContext.Lunchrooms.FirstAsync(l => l.Name == encodedName);
 
-        public async Task<IEnumerable<Domain.Entities.Lunchroom>> GetAll() =>
+        public async Task<IEnumerable<Domain.Entities.Meal>> GetAll() =>
             await _dbContext.Lunchrooms.ToListAsync();
 
-        public async Task<Domain.Entities.Lunchroom> GetByEncodedName(string encodedName) =>
+        public async Task<Domain.Entities.Meal> GetByEncodedName(string encodedName) =>
             await _dbContext.Lunchrooms.FirstAsync(l => l.EncodedName == encodedName);
 
-        public async Task<Domain.Entities.Lunchroom?> GetName(string name) =>
+        public async Task<Domain.Entities.Meal?> GetName(string name) =>
         
             await _dbContext.Lunchrooms.FirstOrDefaultAsync(cw => cw.Name.ToLower() == name.ToLower());
         

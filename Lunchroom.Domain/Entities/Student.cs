@@ -16,7 +16,7 @@ namespace Lunchroom.Domain.Entities
         public int NumberOfLunches { get; set; } = default!;
         public ClassroomName? ClassroomName { get; set; }
         public int? LunchroomId { get; set; } = default!;
-        public Lunchroom Lunchroom { get; set; } = default!;
+        public Meal Lunchroom { get; set; } = default!;
 
     }
 }

@@ -109,5 +109,10 @@ namespace Lunchroom.MVC.Controllers
             var result = await _mediator.Send(new LunchroomGetStudentQuery() { EncodedName = enodedName });
             return Ok(result);
         }
+
+        public async Task AddLunch()
+        {
+
+        }
     }
 }

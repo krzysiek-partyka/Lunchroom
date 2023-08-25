@@ -17,7 +17,7 @@ namespace Lunchroom.Application.Mappings
         public LunchroomMappingProfile(IUserContext userContext)
         {
             var user = userContext.GetCurrentUser();
-            CreateMap<LunchroomDto, Domain.Entities.Lunchroom>()
+            CreateMap<LunchroomDto, Domain.Entities.Meal>()
                  .ForMember(e => e.ContactDetails, opt => opt.MapFrom(src => new LunchroomContactDetails
                  {
                      City = src.City,
@@ -26,7 +26,7 @@ namespace Lunchroom.Application.Mappings
                      PostalCode = src.PostalCode,
                  }));
 
-            CreateMap<Domain.Entities.Lunchroom, LunchroomDto>()
+            CreateMap<Domain.Entities.Meal, LunchroomDto>()
                 .ForMember(e => e.IsEditable,opt => opt.MapFrom(src => (user != null && (user.IsInRole("Moderator") || src.CreatedById == user.Id) )))
                 .ForMember(e => e.Street, opt => opt.MapFrom(src => src.ContactDetails.Street))
                 .ForMember(e => e.City, opt => opt.MapFrom(src => src.ContactDetails.City))

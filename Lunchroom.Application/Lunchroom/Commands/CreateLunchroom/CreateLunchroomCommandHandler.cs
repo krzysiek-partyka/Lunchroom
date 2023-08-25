@@ -29,7 +29,7 @@ namespace Lunchroom.Application.Lunchroom.Commands.CreateLunchroom
             {
                 return Unit.Value;
             }
-            var lunchroom = _mapper.Map<Domain.Entities.Lunchroom>(request);
+            var lunchroom = _mapper.Map<Domain.Entities.Meal>(request);
             lunchroom.EncodeName();
             lunchroom.CreatedById = currentUser.Id;
             await _lunchroomRepository.Create(lunchroom);

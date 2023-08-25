@@ -23,7 +23,7 @@ namespace Lunchroom.Infrastructure.Seeder
                 if(!_dbContext.Lunchrooms.Any())
                 {
 
-                    var schoolLunchroom = new Domain.Entities.Lunchroom()
+                    var schoolLunchroom = new Domain.Entities.Meal()
                     {
                         Name = "Stołowka Szkolna",
                         Description = "Stołow ka przy szkole nr 12 w Olsztynie",
