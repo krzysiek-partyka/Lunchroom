@@ -10,7 +10,7 @@ namespace Lunchroom.Domain.Interfaces
     public  interface IStudentRepository
     {
         Task CreateStudent(Student student);
-        Task<IEnumerable<Student>> GetStudentByEncodedName(string encodedName);
+        Task<IEnumerable<Student>> GetStudents(string encodedName);
         
     }
 }

@@ -50,3 +50,10 @@
      |
     <a asp-action="Index">Back to List</a>
 </div>
+<h5>Students</h5>
+<div id="students" class="row" data-encoded-name="@Model.EncodedName"></div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/js/Lunchroom/Edit.js"></script>
+}

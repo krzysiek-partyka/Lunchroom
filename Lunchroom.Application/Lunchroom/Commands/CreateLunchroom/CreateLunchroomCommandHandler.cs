@@ -25,7 +25,7 @@ namespace Lunchroom.Application.Lunchroom.Commands.CreateLunchroom
         public async Task<Unit> Handle(CreateLunchroomCommand request, CancellationToken cancellationToken)
         {
             var currentUser = _userContext.GetCurrentUser();
-            if (currentUser == null || !currentUser.IsInRole("Owner"))
+            if (currentUser == null || !currentUser.IsInRole("Moderator"))
             {
                 return Unit.Value;
             }

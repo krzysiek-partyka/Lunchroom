@@ -41,6 +41,9 @@ namespace Lunchroom.MVC.Controllers
                 return View(command);
             }
             await _mediator.Send(command);
+            
+            this.SetNotification("success",$"{command.Name} has Edit");
+
             return RedirectToAction(nameof(Index));
         }
         [Route("Lunchroom/{encodedName}/Edit")]
@@ -61,14 +64,14 @@ namespace Lunchroom.MVC.Controllers
             return View(dto);
         }
 
-        [Authorize(Roles = ("Owner"))]
+        //[Authorize(Roles = ("Owner"))]
         public IActionResult Create()
         {
             return View();
         }
 
         [HttpPost]
-        [Authorize(Roles =("Owner"))]
+        //[Authorize(Roles =("Owner"))]
         public async Task<IActionResult> Create(CreateLunchroomCommand command)
         {
             if(!ModelState.IsValid)
@@ -83,7 +86,7 @@ namespace Lunchroom.MVC.Controllers
             return RedirectToAction(nameof(Index));
         }
         [HttpPost]
-        [Authorize(Roles = ("Owner"))]
+        [Authorize(Roles = ("Owner,Moderator"))]
         [Route("Lunchroom/CreateStudent")]
         public async Task<IActionResult> CreateStudent(CreateStudentCommand command)
         {
@@ -103,8 +106,8 @@ namespace Lunchroom.MVC.Controllers
         [Route("Lunchroom/{enodedName}/GetStudent")]
         public async Task<IActionResult> GetStudents(string enodedName)
         {
-            await _mediator.Send(new LunchroomGetStudentQuery() { EncodedName = enodedName });
-            return Ok();
+            var result = await _mediator.Send(new LunchroomGetStudentQuery() { EncodedName = enodedName });
+            return Ok(result);
         }
     }
 }

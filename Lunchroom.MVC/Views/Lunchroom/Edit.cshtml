@@ -48,15 +48,15 @@
 <!-- Button trigger modal -->
 
 
-<div>
+<div class="m-3">
     <partial name="_CreateStudent" model="new CreateStudentCommand(){LunchroomEncodedName = Model.EncodedName}"/>
     <a asp-action="Index" class="btn btn-secondary">Back to List</a>
 </div>
+<h5>Students</h5>
+<div id="students" class="row" data-encoded-name="@Model.EncodedName"></div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 
-    <script src="~/js/Lunchroom/Edit.js">
-        
-    </script>
+    <script src="~/js/Lunchroom/Edit.js"></script>
 }

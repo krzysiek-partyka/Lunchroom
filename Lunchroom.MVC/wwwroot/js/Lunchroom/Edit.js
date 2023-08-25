@@ -1,4 +1,10 @@
-$(document).ready(function () 
+$(document).ready(function () {
+
+    
+
+    LoadCarWorkshopServices()
+
+
     $("#createStudentModal form").submit(function (event) {
         event.preventDefault();
 
@@ -8,10 +14,12 @@ $(document).ready(function ()
             data: $(this).serialize(),
             success: function (data) {
                 toastr["success"]("Created student")
+                LoadCarWorkshopServices()
             },
             error: function () {
                 toastr["error"]("Something went wrong")
             }
         })
-    }
+    });
+    
 });
