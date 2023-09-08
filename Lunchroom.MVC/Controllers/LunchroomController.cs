@@ -7,6 +7,7 @@ using Lunchroom.Application.Lunchroom.Queries.GetLunchroomByEncodedName;
 using Lunchroom.Application.Services;
 using Lunchroom.Application.Student.Commands.CreateStudent;
 using Lunchroom.Application.Student.Queries.GetAllStudents;
+using Lunchroom.Application.Student.Queries.GetStudentById;
 using Lunchroom.Domain.Interfaces;
 using Lunchroom.MVC.Extensions;
 using Lunchroom.MVC.Models;
@@ -46,6 +47,7 @@ namespace Lunchroom.MVC.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
         [Route("Lunchroom/{encodedName}/Edit")]
         public async Task<IActionResult> Edit(string encodedName)
         {
@@ -103,16 +105,19 @@ namespace Lunchroom.MVC.Controllers
         }
 
         [HttpGet]
-        [Route("Lunchroom/{enodedName}/GetStudent")]
-        public async Task<IActionResult> GetStudents(string enodedName)
+        [Route("Lunchroom/{encodedName}/GetStudent")]
+        public async Task<IActionResult> GetStudents(string encodedName)
         {
-            var result = await _mediator.Send(new LunchroomGetStudentQuery() { EncodedName = enodedName });
+            var result = await _mediator.Send(new LunchroomGetStudentQuery() { EncodedName = encodedName });
             return Ok(result);
         }
 
-        public async Task AddLunch()
+        [HttpGet]
+        [Route("Lunchroom/Student/{id}")]
+        public async Task<IActionResult> EditStudent(int id)
         {
-
+           var result = await _mediator.Send(new GetStudentByIdQuery() { Id = id });
+           return Ok(result);
         }
     }
 }

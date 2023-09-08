@@ -9,6 +9,7 @@ namespace Lunchroom.Application.Lunchroom
 {
     public class LunchroomDto
     {
+        public int StudentId { get; set; }
         public string Name { get; set; } = default!;
 
         public string? Description { get; set; }

@@ -11,6 +11,7 @@ namespace Lunchroom.Domain.Interfaces
     {
         Task CreateStudent(Student student);
         Task<IEnumerable<Student>> GetStudents(string encodedName);
+        Task<Student> GetStudentById(int id);
         
     }
 }

@@ -21,27 +21,28 @@ const RenderStudents = (students, container) => {
         const classroomLabel = classroomNames[student.classroomName];
         container.append(
             `<div class="card border-secondary mb-3" style="max-width: 98rem;">
-          <div class="card-header">${student.firstName} ${student.lastName} </div>
+          <div class="d-flex justify-content-between align-items-center">
+              <div class="card-header">${student.firstName} ${student.lastName} <a asp-action="EditStudent" class="btn btn-primary">Edit</a></div>
+            </div>
           <div class="card-body">
-            <h5 class="card-title">${classroomLabel}</h5> 
+            <h5 class="card-title">${classroomLabel}</h5>
           </div>
         </div>`)
     }
 }
 
-const LoadCarWorkshopServices = () => {
+const LoadStudents = () => {
     const container = $("#students")
     const lunchroomEncodedName = container.data("encodedName");
 
     $.ajax({
         url: `/Lunchroom/${lunchroomEncodedName}/GetStudent`,
         type: 'get',
-        success: function (data) {
+        success: function (data) { 
             if (!data.length) {
                 container.html("There are no services for this car workshop")
             } else {
                 RenderStudents(data, container)
-
             }
         },
         error: function () {
@@ -49,3 +50,5 @@ const LoadCarWorkshopServices = () => {
         }
     })
 }
+
+

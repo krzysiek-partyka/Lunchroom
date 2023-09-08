@@ -1,8 +1,6 @@
 $(document).ready(function () {
 
-    
-
-    LoadCarWorkshopServices()
+    LoadStudents()
 
 
     $("#createStudentModal form").submit(function (event) {
@@ -14,7 +12,7 @@ $(document).ready(function () {
             data: $(this).serialize(),
             success: function (data) {
                 toastr["success"]("Created student")
-                LoadCarWorkshopServices()
+                LoadStudents()
             },
             error: function () {
                 toastr["error"]("Something went wrong")
