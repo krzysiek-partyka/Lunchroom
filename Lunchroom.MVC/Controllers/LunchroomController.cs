@@ -117,7 +117,7 @@ namespace Lunchroom.MVC.Controllers
         public async Task<IActionResult> EditStudent(int id)
         {
            var result = await _mediator.Send(new GetStudentByIdQuery() { Id = id });
-           return Ok(result);
+           return View(result);
         }
     }
 }

@@ -44,6 +44,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTHVuY2hyb29tXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/lunchroomMVC/Lunchroom.MVC/Views/Lunchroom/EditStudent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTHVuY2hyb29tXEVkaXRTdHVkZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/lunchroomMVC/Lunchroom.MVC/Views/Lunchroom/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTHVuY2hyb29tXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
