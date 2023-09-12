@@ -19,8 +19,9 @@ namespace Lunchroom.Infrastructure.Repositories
         {
             _dbContext = dbContext;
         }
-        
 
+        public async Task Commit() =>
+            await _dbContext.SaveChangesAsync();
 
         public async Task CreateStudent(Student student)
         {

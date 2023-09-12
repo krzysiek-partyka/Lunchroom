@@ -33,7 +33,7 @@ namespace Lunchroom.Application.Lunchroom.Commands.EditLunchroom
             {
                 return Unit.Value;
             }
-            lunchroom.Description= request.Description;
+            lunchroom.Description = request.Description;
             lunchroom.ContactDetails.Phone = request.Phone;
             lunchroom.ContactDetails.PostalCode = request.PostalCode;
             lunchroom.ContactDetails.City = request.City;

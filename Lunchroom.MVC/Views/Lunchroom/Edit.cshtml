@@ -3,8 +3,6 @@
 
 @{
     ViewData["Title"] = "Edit";
-    
-    var editLink = Url.Action("EditStudent");
 
 }
 
@@ -57,7 +55,7 @@
     <a asp-action="Index" class="btn btn-secondary">Back to List</a>
 </div>
 <h5>Students</h5>
-<div id="students" class="row" data-encoded-name="@Model.EncodedName" data-edit-link="@editLink" data-id="@Model.StudentId"></div>
+<div id="students" class="row" data-encoded-name="@Model.EncodedName" data-id="@Model.StudentId"></div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

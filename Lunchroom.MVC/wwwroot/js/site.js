@@ -19,11 +19,12 @@ const RenderStudents = (students, container) => {
 
     for (const student of students) {
         const classroomLabel = classroomNames[student.classroomName];
-        const editLink = container.data("editLink");
+        const lunchroomEncodedName = container.data("encodedName");
+        
         container.append(
             `<div class="card border-secondary mb-3" style="max-width: 98rem;">
           <div class="d-flex justify-content-between align-items-center">
-              <div class="card-header">${student.firstName} ${student.lastName} <a href="${editLink}" class="btn btn-primary">EditStudent</a></div>
+              <div class="card-header">${student.firstName} ${student.lastName} <a href="/Lunchroom/${lunchroomEncodedName}/Student/${student.id}" class="btn btn-primary">EditStudent</a></div>
             </div>
           <div class="card-body">
             <h5 class="card-title">${classroomLabel}</h5>

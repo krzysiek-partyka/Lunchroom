@@ -1,11 +1,14 @@
 ﻿using AutoMapper;
+using Humanizer;
 using Lunchroom.Application.Lunchroom;
 using Lunchroom.Application.Lunchroom.Commands.CreateLunchroom;
 using Lunchroom.Application.Lunchroom.Commands.EditLunchroom;
 using Lunchroom.Application.Lunchroom.Queries.GetAllLunchrooms;
 using Lunchroom.Application.Lunchroom.Queries.GetLunchroomByEncodedName;
 using Lunchroom.Application.Services;
+using Lunchroom.Application.Student;
 using Lunchroom.Application.Student.Commands.CreateStudent;
+using Lunchroom.Application.Student.Commands.EditStudent;
 using Lunchroom.Application.Student.Queries.GetAllStudents;
 using Lunchroom.Application.Student.Queries.GetStudentById;
 using Lunchroom.Domain.Interfaces;
@@ -15,6 +18,7 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace Lunchroom.MVC.Controllers
 {
@@ -57,7 +61,7 @@ namespace Lunchroom.MVC.Controllers
                 return RedirectToAction("NoAccess","Home");
             }
             EditLunchroomCommand model = _mapper.Map<EditLunchroomCommand>(dto);
-            return View(model); ;
+            return View(model);
         }
         [Route("Lunchroom/{encodedName}/Details")]
         public async Task<IActionResult> Details(string encodedName)
@@ -99,8 +103,6 @@ namespace Lunchroom.MVC.Controllers
 
             await _mediator.Send(command);
 
-            
-
             return RedirectToAction(nameof(Index));
         }
 
@@ -113,11 +115,30 @@ namespace Lunchroom.MVC.Controllers
         }
 
         [HttpGet]
-        [Route("Lunchroom/Student/{id}")]
-        public async Task<IActionResult> EditStudent(int id)
+        [Route("Lunchroom/{encodedName}/Student/{id}")]
+        public async Task<IActionResult> EditStudent(string encodedName, int id)
         {
-           var result = await _mediator.Send(new GetStudentByIdQuery() { Id = id });
-           return View(result);
+            var result = await _mediator.Send(new GetStudentByIdQuery() { EncodedName = encodedName, Id = id });
+            //if (!dto.IsEditable)
+            //{
+            //    return RedirectToAction("NoAccess", "Home");
+            //}
+            return View(result);
+        }
+
+        [HttpPost]
+        [Route("Lunchroom/{encodedName}/Student/{studentId}")]
+        public async Task<IActionResult> EditStudent(EditStudentCommand dto, string encodedName, int studentId)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(dto);
+            }
+            await _mediator.Send(dto);
+
+            this.SetNotification("success", $"{dto.FirstName} {dto.LastName} has Edit");
+
+            return RedirectToAction(nameof(Index));
         }
     }
 }
