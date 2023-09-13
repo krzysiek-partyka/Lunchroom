@@ -7,6 +7,7 @@ using Lunchroom.Application.Lunchroom.Queries.GetAllLunchrooms;
 using Lunchroom.Application.Lunchroom.Queries.GetLunchroomByEncodedName;
 using Lunchroom.Application.Services;
 using Lunchroom.Application.Student;
+using Lunchroom.Application.Student.Commands.AddLunch;
 using Lunchroom.Application.Student.Commands.CreateStudent;
 using Lunchroom.Application.Student.Commands.EditStudent;
 using Lunchroom.Application.Student.Queries.GetAllStudents;
@@ -139,6 +140,18 @@ namespace Lunchroom.MVC.Controllers
             this.SetNotification("success", $"{dto.FirstName} {dto.LastName} has Edit");
 
             return RedirectToAction(nameof(Index));
+        }
+
+        [HttpPost]
+        [Route("Student/{studentId}/AddLunch")]
+        public async Task<IActionResult> AddLunch(int studentId)
+        {
+            var command = await _mediator.Send(new AddLunchCommand()
+            {Id = studentId});
+
+            this.SetNotification("success", $"1 lunch has added");
+
+            return RedirectToAction(nameof(Edit));
         }
     }
 }

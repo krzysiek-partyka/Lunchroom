@@ -32,6 +32,7 @@ namespace Lunchroom.Application.Student.Commands.EditStudent
             var enumValue = (int)request.ClassroomName!;
             student.FirstName = request.FirstName;
             student.LastName = request.LastName;
+            student.NumberOfLunches = request.NumberOfLunches;
             student.ClassroomName = (Domain.Entities.ClassroomName)enumValue;
 
             await _studentRepository.Commit();

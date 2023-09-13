@@ -27,6 +27,20 @@
                 <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="NumberOfLunches" class="control-label"></label>
+                <div class="input-group">
+                    <input asp-for="NumberOfLunches" class="form-control" />
+                    <div class="input-group-append">
+                        <button type="button" class="btn btn-danger" onclick="decreaseValue()">-</button>
+                    </div>
+                    <div class="input-group-append">
+                        <button type="button" class="btn btn-success" onclick="increaseValue()">+</button>
+                    </div>
+                </div>
+                <span asp-validation-for="NumberOfLunches" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
                 <label asp-for="ClassroomName" class="control-label"></label>
                 <select asp-for="ClassroomName" class="form-control" asp-items="Html.GetEnumSelectList<ClassroomName>()">
                     <option selected="selected" value="">Wybierz klasę</option>
@@ -46,4 +60,9 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script src="~/js/Lunchroom/Edit.js"></script>
+
 }
+
+

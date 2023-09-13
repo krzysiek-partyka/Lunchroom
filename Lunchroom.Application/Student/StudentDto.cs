@@ -12,6 +12,7 @@ namespace Lunchroom.Application.Student
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public int NumberOfLunches { get; set; }
         public ClassroomName? ClassroomName { get; set; }
     }
 }
