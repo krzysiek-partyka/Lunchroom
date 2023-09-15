@@ -48,7 +48,7 @@ const LoadStudents = () => {
         type: 'get',
         success: function (data) { 
             if (!data.length) {
-                container.html("There are no services for this car workshop")
+                container.html("There are no services for this Lunchroom")
             } else {
                 RenderStudents(data, container)
             }
@@ -74,34 +74,37 @@ function decreaseValue() {
 }
 
 function addLunch(studentId) {
+
     $.ajax({
         url: `/Student/${studentId}/AddLunch`,
         type: 'POST',
         success: function (result) {
-            // Obsłuż sukces (możesz odświeżyć listę studentów lub wykonać inne działania)
-            console.log('Lunch added successfully');
-            // Możesz dodać kod do odświeżenia listy studentów po udanym dodaniu lunchu
+
+            LoadStudents()
+            toastr["success"]("Lunch added succefully")
+            
         },
-        error: function (error) {
-            // Obsłuż błąd (możesz wyświetlić komunikat lub podjąć inne działania)
-            console.error('Error adding lunch: ' + error.responseText);
+        error: function () {
+
+            toastr["error"]("Something went wrong")
         }
     });
 }
 
 function removeLunch(studentId) {
-    // Implementuj podobnie jak funkcję addLunch, ale na potrzeby usuwania lunchu
+
     $.ajax({
-        url: `/Student/${studentId}/AddLunch`,
+        url: `/Student/${studentId}/RemoveLunch`,
         type: 'POST',
         success: function (result) {
-            // Obsłuż sukces (możesz odświeżyć listę studentów lub wykonać inne działania)
-            console.log('Lunch removed successfully');
-            // Możesz dodać kod do odświeżenia listy studentów po udanym dodaniu lunchu
+
+            LoadStudents()
+            toastr["success"]("Lunch removed succefully")
+            
         },
-        error: function (error) {
-            // Obsłuż błąd (możesz wyświetlić komunikat lub podjąć inne działania)
-            console.error('Error removed lunch: ' + error.responseText);
+        error: function () {
+            
+            toastr["error"]("Something went wrong")
         }
     });
 }
