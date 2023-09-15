@@ -11,6 +11,7 @@ using Lunchroom.Application.Student.Commands.AddLunch;
 using Lunchroom.Application.Student.Commands.CreateStudent;
 using Lunchroom.Application.Student.Commands.EditStudent;
 using Lunchroom.Application.Student.Commands.RemoveLunch;
+using Lunchroom.Application.Student.Queries.CreateRaport;
 using Lunchroom.Application.Student.Queries.GetAllStudents;
 using Lunchroom.Application.Student.Queries.GetStudentById;
 using Lunchroom.Domain.Interfaces;
@@ -150,8 +151,6 @@ namespace Lunchroom.MVC.Controllers
             var command = await _mediator.Send(new AddLunchCommand()
             {Id = studentId});
 
-            //this.SetNotification("success", $"1 lunch has added");
-
             return Ok();
         }
 
@@ -162,9 +161,17 @@ namespace Lunchroom.MVC.Controllers
             var command = await _mediator.Send(new RemoveLunchCommand()
             { Id = studentId });
 
-            //this.SetNotification("success", $"1 lunch has added");
-
             return Ok();
         }
+
+        [HttpGet]
+        [Route("Student/CreateRaport")]
+        public async Task<IActionResult> CreateRaport()
+        {
+            var command = await _mediator.Send(new CreateRaportQuery());
+            return View(command);
+        }
+
+
     }
 }

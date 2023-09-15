@@ -19,11 +19,33 @@
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
+
             <div class="form-group m-3">
                 <label asp-for="City" class="control-label"></label>
                 <input asp-for="City" class="form-control" />
                 <span asp-validation-for="City" class="text-danger"></span>
             </div>
+            <div class="form-group m-3">
+                <label asp-for="LunchesUpdate" class="control-label"></label>
+                <div class="input-group">
+                    <input asp-for="LunchesUpdate" class="form-control" />
+                    <div class="input-group-append">
+                        <button type="button" class="btn btn-success" onclick="turnOn()">On</button>
+                        <button type="button" class="btn btn-danger" onclick="turnOff()">Off</button>
+                    </div>
+                </div>
+                <span asp-validation-for="LunchesUpdate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group m-3">
+                <label asp-for="LunchPrice" class="control-label"></label>
+                <input asp-for="LunchPrice" class="form-control" />
+                <div class="input-group-append">
+                    <a class="btn btn-warning" asp-controller="Lunchroom" asp-action="CreateRaport">Raport</a>
+                </div>
+                <span asp-validation-for="LunchPrice" class="text-danger"></span>
+            </div>
+            
             <div class="form-group m-3">
                 <label asp-for="Street" class="control-label"></label>
                 <input asp-for="Street" class="form-control" />
@@ -61,4 +83,18 @@
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 
     <script src="~/js/Lunchroom/Edit.js"></script>
+
 }
+<script>
+    function turnOn() {
+       
+        var value = 1;
+        // Perform any additional actions you need
+    }
+
+    function turnOff() {
+        
+        var value = 0;
+        // Perform any additional actions you need
+    }
+</script>

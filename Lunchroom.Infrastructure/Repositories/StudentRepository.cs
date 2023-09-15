@@ -32,9 +32,13 @@ namespace Lunchroom.Infrastructure.Repositories
         public async Task<Student> GetStudentById(int id) =>
             await _dbContext.Students.FirstAsync(s => s.Id == id);
 
-        public async Task<IEnumerable<Student>> GetStudents(string encodedName) =>
+        public async Task<IEnumerable<Student>> GetStudentsByEncodedName(string encodedName) =>
            await _dbContext.Students
             .Where(s => s.Lunchroom.EncodedName == encodedName).ToListAsync();
+
+        public async Task<IEnumerable<Student>> GetStudents() =>
+            await _dbContext.Students.ToListAsync();
+
 
     }
 }
