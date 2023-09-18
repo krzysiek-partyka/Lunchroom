@@ -13,19 +13,32 @@ namespace Lunchroom.Application.Student.Queries.CreateRaport
     {
         private readonly IStudentRepository _studentRepository;
         private readonly IMapper _mapper;
+        private readonly ILunchroomRepository _lunchroomRepository;
 
-        public CreateRaportQueryHandler(IStudentRepository studentRepository, IMapper mapper)
+        public CreateRaportQueryHandler(IStudentRepository studentRepository, IMapper mapper, ILunchroomRepository lunchroomRepository)
         {
             _studentRepository = studentRepository;
             _mapper = mapper;
+            _lunchroomRepository = lunchroomRepository;
         }
 
         public async Task<IEnumerable<StudentDto>> Handle(CreateRaportQuery request, CancellationToken cancellationToken)
         {
+            
             var students = await _studentRepository.GetStudents();
-            var dtos = _mapper.Map<IEnumerable<StudentDto>>(students);
+            var lunchroom = await _lunchroomRepository.GetByEncodedName("stołowka-szkolna");// TO DO!!!
+            
 
-            return dtos;
+            var dtos = _mapper.Map<IEnumerable<StudentDto>>(students);
+            var dtosWitchPayment = dtos.Select(d =>
+            {
+                d.Payment = lunchroom.LunchPrice * d.NumberOfLunches;
+                return d;
+            });
+
+
+
+            return dtosWitchPayment;
 
             
         }

@@ -25,7 +25,10 @@
                 @Html.DisplayNameFor(model => model.NumberOfLunches)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ClassroomName)
+                @Html.DisplayNameFor(model => model.LunchPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment)
             </th>
             <th></th>
         </tr>
@@ -46,7 +49,10 @@
                 @Html.DisplayFor(modelItem => item.NumberOfLunches)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ClassroomName)
+                @Html.DisplayFor(modelItem => item.LunchPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Payment)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |

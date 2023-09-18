@@ -21,7 +21,7 @@ namespace Lunchroom.Application.Student.Queries.GetAllStudents
         }
         public async Task<IEnumerable<StudentDto>> Handle(LunchroomGetStudentQuery request, CancellationToken cancellationToken)
         {
-            var students = await _studentRepository.GetStudentsByEncodedName(request.EncodedName);
+            var students = await _studentRepository.GetStudentsByLunchroomEncodedName(request.EncodedName);
             var dtos = _mapper.Map<IEnumerable<StudentDto>>(students);
             return dtos;
 

@@ -14,6 +14,10 @@ namespace Lunchroom.Application.Student
         public string LastName { get; set; }
         public int NumberOfLunches { get; set; }
         public ClassroomName? ClassroomName { get; set; }
+        public decimal LunchPrice { get; set; }
+        public decimal Payment { get; set; }
+
+        //public void Paymants() => Payment = NumberOfLunches * 1.5m; 
 
     }
 }

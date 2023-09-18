@@ -9,5 +9,6 @@ namespace Lunchroom.Application.Student.Queries.CreateRaport
 {
     public class CreateRaportQuery : IRequest<IEnumerable<StudentDto>>
     {
+
     }
 }

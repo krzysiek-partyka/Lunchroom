@@ -36,7 +36,10 @@ namespace Lunchroom.Application.Mappings
 
             CreateMap<LunchroomDto, EditLunchroomCommand>();
 
-            CreateMap<StudentDto, Domain.Entities.Student>().ReverseMap();
+            CreateMap<StudentDto, Domain.Entities.Student>();
+
+            CreateMap<Domain.Entities.Student, StudentDto>()
+                .ForMember(e => e.LunchPrice, opt => opt.MapFrom(src => src.Lunchroom.LunchPrice));
         }
     }
 }
