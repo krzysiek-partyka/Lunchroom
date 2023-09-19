@@ -19,8 +19,9 @@ namespace Lunchroom.Infrastructure.Repositories
         {
             _dbContext = dbContext;
         }
-        
 
+        public async Task Commit() =>
+            await _dbContext.SaveChangesAsync();
 
         public async Task CreateStudent(Student student)
         {
@@ -28,9 +29,16 @@ namespace Lunchroom.Infrastructure.Repositories
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<Student>> GetStudents(string encodedName) =>
+        public async Task<Student> GetStudentById(int id) =>
+            await _dbContext.Students.FirstAsync(s => s.Id == id);
+
+        public async Task<IEnumerable<Student>> GetStudentsByLunchroomEncodedName(string encodedName) =>
            await _dbContext.Students
             .Where(s => s.Lunchroom.EncodedName == encodedName).ToListAsync();
+
+        public async Task<IEnumerable<Student>> GetStudents() =>
+            await _dbContext.Students.ToListAsync();
+
 
     }
 }

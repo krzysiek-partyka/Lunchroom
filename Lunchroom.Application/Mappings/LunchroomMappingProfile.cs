@@ -23,7 +23,7 @@ namespace Lunchroom.Application.Mappings
                      City = src.City,
                      Street = src.Street,
                      Phone = src.Phone,
-                     PostalCode = src.PostalCode,
+                     PostalCode = src.PostalCode
                  }));
 
             CreateMap<Domain.Entities.Meal, LunchroomDto>()
@@ -31,11 +31,15 @@ namespace Lunchroom.Application.Mappings
                 .ForMember(e => e.Street, opt => opt.MapFrom(src => src.ContactDetails.Street))
                 .ForMember(e => e.City, opt => opt.MapFrom(src => src.ContactDetails.City))
                 .ForMember(e => e.PostalCode, opt => opt.MapFrom(src => src.ContactDetails.PostalCode))
-                .ForMember(e => e.Phone, opt => opt.MapFrom(src => src.ContactDetails.Phone));
+                .ForMember(e => e.Phone, opt => opt.MapFrom(src => src.ContactDetails.Phone))
+                .ForMember(e => e.StudentId, opt => opt.MapFrom(src => src.StudentId));
 
             CreateMap<LunchroomDto, EditLunchroomCommand>();
 
-            CreateMap<StudentDto, Domain.Entities.Student>().ReverseMap();
+            CreateMap<StudentDto, Domain.Entities.Student>();
+
+            CreateMap<Domain.Entities.Student, StudentDto>()
+                .ForMember(e => e.LunchPrice, opt => opt.MapFrom(src => src.Lunchroom.LunchPrice));
         }
     }
 }
