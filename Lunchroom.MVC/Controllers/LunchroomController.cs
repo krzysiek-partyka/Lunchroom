@@ -165,10 +165,10 @@ namespace Lunchroom.MVC.Controllers
         }
 
         [HttpGet]
-        [Route("Student/CreateRaport")]
-        public async Task<IActionResult> CreateRaport()
+        [Route("Student/{encodedName}/CreateRaport")]
+        public async Task<IActionResult> CreateRaport(string encodedName)
         {
-            var command = await _mediator.Send(new CreateRaportQuery());
+            var command = await _mediator.Send(new CreateRaportQuery(encodedName));
             return View(command);
         }
 

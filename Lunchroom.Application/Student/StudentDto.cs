@@ -17,7 +17,5 @@ namespace Lunchroom.Application.Student
         public decimal LunchPrice { get; set; }
         public decimal Payment { get; set; }
 
-        //public void Paymants() => Payment = NumberOfLunches * 1.5m; 
-
     }
 }

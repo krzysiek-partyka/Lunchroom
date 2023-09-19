@@ -26,17 +26,14 @@ namespace Lunchroom.Application.Student.Queries.CreateRaport
         {
             
             var students = await _studentRepository.GetStudents();
-            var lunchroom = await _lunchroomRepository.GetByEncodedName("stołowka-szkolna");// TO DO!!!
+            var lunchroom = await _lunchroomRepository.GetByEncodedName(request.EncodedName);
             
-
             var dtos = _mapper.Map<IEnumerable<StudentDto>>(students);
             var dtosWitchPayment = dtos.Select(d =>
             {
                 d.Payment = lunchroom.LunchPrice * d.NumberOfLunches;
                 return d;
             });
-
-
 
             return dtosWitchPayment;
 
