@@ -395,3 +395,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/Lunchroom.MVC/obj/Debug/net7.0/Lunchroom.MVC.csproj.AssemblyReference.cache
