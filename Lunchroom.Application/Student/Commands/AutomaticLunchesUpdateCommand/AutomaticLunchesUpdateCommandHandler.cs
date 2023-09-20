@@ -23,6 +23,7 @@ namespace Lunchroom.Application.Student.Commands.AutomaticLunchesUpdateCommand
             var studentsWithUpdatedLunches = students.Select(s =>
             {
                 s.NumberOfLunches += 1;
+                return s;
             });
 
             return Unit.Value;
