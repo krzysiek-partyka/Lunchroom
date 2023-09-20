@@ -27,7 +27,7 @@ namespace Lunchroom.Application.Student.Commands.CreateStudent
 
         public async Task<Unit> Handle(CreateStudentCommand request, CancellationToken cancellationToken)
         {
-            var lunchroom = await _lunchroomRepository.GetByEncodedName(request.LunchroomEncodedName!);
+            var lunchroom = await _lunchroomRepository.GetStudentByEncodedName(request.LunchroomEncodedName!);
 
             var user = _userContext.GetCurrentUser();
             var isEditable = user != null && (lunchroom.CreatedById == user.Id || user.IsInRole("Moderator"));

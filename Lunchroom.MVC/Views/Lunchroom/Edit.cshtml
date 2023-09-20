@@ -40,9 +40,11 @@
             <div class="form-group m-3">
                 <label asp-for="LunchPrice" class="control-label"></label>
                 <div class="input-group">
-                    <input asp-for="LunchPrice" class="form-control" />
-                    <div class="input-group-append">
-                        <a class="btn btn-warning" asp-controller="Lunchroom" asp-action="CreateRaport" asp-route-encodedName="@Model.EncodedName">Raport</a>
+                    <div class="input-group">
+                        <input asp-for="LunchPrice" class="form-control" />
+                        <div class="input-group-append">
+                            <a class="btn btn-warning" asp-controller="Lunchroom" asp-action="CreateRaport" asp-route-encodedName="@Model.EncodedName">Raport</a>
+                        </div>
                     </div>
                 </div>
                 <span asp-validation-for="LunchPrice" class="text-danger"></span>

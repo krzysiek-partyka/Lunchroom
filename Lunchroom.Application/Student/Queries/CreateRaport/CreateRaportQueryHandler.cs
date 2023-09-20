@@ -26,7 +26,7 @@ namespace Lunchroom.Application.Student.Queries.CreateRaport
         {
             
             var students = await _studentRepository.GetStudents();
-            var lunchroom = await _lunchroomRepository.GetByEncodedName(request.EncodedName);
+            var lunchroom = await _lunchroomRepository.GetStudentByEncodedName(request.EncodedName);
             
             var dtos = _mapper.Map<IEnumerable<StudentDto>>(students);
             var dtosWitchPayment = dtos.Select(d =>

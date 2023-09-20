@@ -25,7 +25,7 @@ namespace Lunchroom.Application.Lunchroom.Commands.EditLunchroom
 
         public async Task<Unit> Handle(EditLunchroomCommand request, CancellationToken cancellationToken)
         {
-            var lunchroom = await _lunchroomRepository.GetByEncodedName(request.EncodedName!);
+            var lunchroom = await _lunchroomRepository.GetStudentByEncodedName(request.EncodedName!);
 
             var user = _userContext.GetCurrentUser();
             var isEditable = user != null && (lunchroom.CreatedById == user.Id || user.IsInRole("Moderator"));
