@@ -15,7 +15,7 @@ namespace Lunchroom.Application.Services
         Task<IEnumerable<LunchroomDto>> GetAll();
     }
 
-    public class LunchroomService : ILunchroomService
+    public class LunchroomService
     {
         private readonly ILunchroomRepository _lunchroomRepository;
         private readonly IMapper _mapper;
