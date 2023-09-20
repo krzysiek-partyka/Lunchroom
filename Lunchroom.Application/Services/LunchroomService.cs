@@ -25,17 +25,6 @@ namespace Lunchroom.Application.Services
             _lunchroomRepository = lunchroomRepository;
             _mapper = mapper;
         }
-        public async Task Create(LunchroomDto lunchroomDto)
-        {
-            
-
-        }
-
-        public async Task<IEnumerable<LunchroomDto>> GetAll()
-        {
-            var lunchrooms = await _lunchroomRepository.GetAll();
-            var dto = _mapper.Map<IEnumerable<LunchroomDto>>(lunchrooms);
-            return dto;
-        }
+        
     }
 }
