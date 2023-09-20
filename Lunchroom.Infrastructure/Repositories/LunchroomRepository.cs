@@ -1,4 +1,5 @@
-﻿using Lunchroom.Domain.Interfaces;
+﻿using Lunchroom.Domain.Entities;
+using Lunchroom.Domain.Interfaces;
 using Lunchroom.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -33,12 +34,12 @@ namespace Lunchroom.Infrastructure.Repositories
         public async Task<IEnumerable<Domain.Entities.Meal>> GetAll() =>
             await _dbContext.Lunchrooms.ToListAsync();
 
-        public async Task<Domain.Entities.Meal> GetByEncodedName(string encodedName) =>
+        public async Task<Domain.Entities.Meal> GetStudentByEncodedName(string encodedName) =>
             await _dbContext.Lunchrooms.FirstAsync(l => l.EncodedName == encodedName);
 
         public async Task<Domain.Entities.Meal?> GetName(string name) =>
         
             await _dbContext.Lunchrooms.FirstOrDefaultAsync(cw => cw.Name.ToLower() == name.ToLower());
-        
+
     }
 }

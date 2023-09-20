@@ -22,7 +22,7 @@ namespace Lunchroom.Application.Lunchroom.Queries.GetLunchroomByEncodedName
         }
         public async Task<LunchroomDto> Handle(GetLunchroomByEncodedNameQuery request, CancellationToken cancellationToken)
         {
-            var lunchroom = await _lunchroomRepository.GetByEncodedName(request.EncodedName);   
+            var lunchroom = await _lunchroomRepository.GetStudentByEncodedName(request.EncodedName);   
             var dto = _mapper.Map<LunchroomDto>(lunchroom);
             return dto;
         }

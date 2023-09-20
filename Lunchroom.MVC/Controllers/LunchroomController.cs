@@ -14,6 +14,7 @@ using Lunchroom.Application.Student.Commands.RemoveLunch;
 using Lunchroom.Application.Student.Queries.CreateRaport;
 using Lunchroom.Application.Student.Queries.GetAllStudents;
 using Lunchroom.Application.Student.Queries.GetStudentById;
+using Lunchroom.Application.Student.Queries.PersonalRaportQuery;
 using Lunchroom.Domain.Interfaces;
 using Lunchroom.MVC.Extensions;
 using Lunchroom.MVC.Models;
@@ -49,8 +50,8 @@ namespace Lunchroom.MVC.Controllers
                 return View(command);
             }
             await _mediator.Send(command);
-            
-            this.SetNotification("success",$"{command.Name} has Edit");
+
+            this.SetNotification("success", $"{command.Name} has Edit");
 
             return RedirectToAction(nameof(Index));
         }
@@ -59,9 +60,9 @@ namespace Lunchroom.MVC.Controllers
         public async Task<IActionResult> Edit(string encodedName)
         {
             var dto = await _mediator.Send(new GetLunchroomByEncodedNameQuery(encodedName));
-            if(!dto.IsEditable)
+            if (!dto.IsEditable)
             {
-                return RedirectToAction("NoAccess","Home");
+                return RedirectToAction("NoAccess", "Home");
             }
             EditLunchroomCommand model = _mapper.Map<EditLunchroomCommand>(dto);
             return View(model);
@@ -69,7 +70,7 @@ namespace Lunchroom.MVC.Controllers
         [Route("Lunchroom/{encodedName}/Details")]
         public async Task<IActionResult> Details(string encodedName)
         {
-            var dto = await  _mediator.Send(new GetLunchroomByEncodedNameQuery(encodedName));
+            var dto = await _mediator.Send(new GetLunchroomByEncodedNameQuery(encodedName));
             return View(dto);
         }
 
@@ -83,7 +84,7 @@ namespace Lunchroom.MVC.Controllers
         //[Authorize(Roles =("Owner"))]
         public async Task<IActionResult> Create(CreateLunchroomCommand command)
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
@@ -149,7 +150,7 @@ namespace Lunchroom.MVC.Controllers
         public async Task<IActionResult> AddLunch(int studentId)
         {
             var command = await _mediator.Send(new AddLunchCommand()
-            {Id = studentId});
+            { Id = studentId });
 
             return Ok();
         }
@@ -165,11 +166,26 @@ namespace Lunchroom.MVC.Controllers
         }
 
         [HttpGet]
-        [Route("Student/CreateRaport")]
-        public async Task<IActionResult> CreateRaport()
+        [Route("Student/{encodedName}/CreateRaport")]
+        public async Task<IActionResult> CreateRaport(string encodedName)
         {
-            var command = await _mediator.Send(new CreateRaportQuery());
-            return View(command);
+            var query = await _mediator.Send(new CreateRaportQuery(encodedName));
+            return View(query);
+        }
+
+        //[HttpGet]
+        //[Route("Lunchroom/{encodedName}/Student/{id}/Raport")]
+        //public async Task<IActionResult> PersonalRaport(string encodedName, int id)
+        //{
+        //    var query = await _mediator.Send(new PersonalRaportQuery(encodedName ,id));
+        //    return View(query);
+        //}
+
+        [HttpPost]
+        [Route("Lunchroom/{encodedName}/AutomaticUpdate")]
+        public async Task<IActionResult> AutomaticLunchesUpdate(string encodedName)
+        {
+            var command = _mediator.Send(new AutomaticLunchesUpdateCommand(encodedName));
         }
 
 

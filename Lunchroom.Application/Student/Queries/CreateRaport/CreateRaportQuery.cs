@@ -9,6 +9,11 @@ namespace Lunchroom.Application.Student.Queries.CreateRaport
 {
     public class CreateRaportQuery : IRequest<IEnumerable<StudentDto>>
     {
+        public string EncodedName { get; set; }
 
+        public CreateRaportQuery(string encodedName)
+        {
+            EncodedName = encodedName;
+        }
     }
 }
