@@ -396,3 +396,9 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 /.vs/lunchroomMVC/v17/.suo
+/.vs/lunchroomMVC/v17/.suo
+/Lunchroom.Application/bin/Debug/net7.0/Lunchroom.Application.dll
+/Lunchroom.Application/bin/Debug/net7.0/Lunchroom.Application.pdb
+/Lunchroom.Application/obj/Debug/net7.0/Lunchroom.Application.csproj.AssemblyReference.cache
+/Lunchroom.Application/obj/Debug/net7.0/Lunchroom.Application.dll
+/Lunchroom.Application/obj/Debug/net7.0/Lunchroom.Application.pdb
