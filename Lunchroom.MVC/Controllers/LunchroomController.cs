@@ -8,6 +8,7 @@ using Lunchroom.Application.Lunchroom.Queries.GetLunchroomByEncodedName;
 using Lunchroom.Application.Services;
 using Lunchroom.Application.Student;
 using Lunchroom.Application.Student.Commands.AddLunch;
+using Lunchroom.Application.Student.Commands.AutomaticLunchesUpdateCommand;
 using Lunchroom.Application.Student.Commands.CreateStudent;
 using Lunchroom.Application.Student.Commands.EditStudent;
 using Lunchroom.Application.Student.Commands.RemoveLunch;
@@ -185,7 +186,8 @@ namespace Lunchroom.MVC.Controllers
         [Route("Lunchroom/{encodedName}/AutomaticUpdate")]
         public async Task<IActionResult> AutomaticLunchesUpdate(string encodedName)
         {
-            var command = _mediator.Send(new AutomaticLunchesUpdateCommand(encodedName));
+            var command = await _mediator.Send(new AutomaticLunchesUpdateCommand(encodedName));
+            return Ok(command);
         }
 
 
