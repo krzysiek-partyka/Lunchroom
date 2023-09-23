@@ -32,6 +32,7 @@ namespace Lunchroom.Application.Extensions
             service.AddValidatorsFromAssemblyContaining<CreateLunchroomCommandValidator>()
                 .AddFluentValidationAutoValidation()
                 .AddFluentValidationClientsideAdapters();
+            service.AddScoped<IStudentService, StudentService>();
         }
     }
 }

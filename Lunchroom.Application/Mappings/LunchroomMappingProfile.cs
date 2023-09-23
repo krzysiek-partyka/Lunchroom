@@ -39,7 +39,8 @@ namespace Lunchroom.Application.Mappings
             CreateMap<StudentDto, Domain.Entities.Student>();
 
             CreateMap<Domain.Entities.Student, StudentDto>()
-                .ForMember(e => e.LunchPrice, opt => opt.MapFrom(src => src.Lunchroom.LunchPrice));
+                .ForMember(e => e.LunchPrice, opt => opt.MapFrom(src => src.Lunchroom.LunchPrice))
+                .ForMember(e => e.LunchroomEncodedName, opt => opt.MapFrom(src => src.Lunchroom.EncodedName));
         }
     }
 }

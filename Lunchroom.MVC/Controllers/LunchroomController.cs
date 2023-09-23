@@ -16,6 +16,7 @@ using Lunchroom.Application.Student.Queries.CreateRaport;
 using Lunchroom.Application.Student.Queries.GetAllStudents;
 using Lunchroom.Application.Student.Queries.GetStudentById;
 using Lunchroom.Application.Student.Queries.PersonalRaportQuery;
+using Lunchroom.Application.Student.Queries.StudentsRaportToFileQuery;
 using Lunchroom.Domain.Interfaces;
 using Lunchroom.MVC.Extensions;
 using Lunchroom.MVC.Models;
@@ -188,6 +189,15 @@ namespace Lunchroom.MVC.Controllers
         {
             var command = await _mediator.Send(new AutomaticLunchesUpdateCommand(encodedName));
             return Ok(command);
+        }
+
+        [HttpGet]
+        [Route("Lunchroom/{encodedName}/RaportToFile")]
+        public async Task<IActionResult> StudentsRaportToFile(string encodedName)
+        {
+            var query = await _mediator.Send(new StudentsRaportToFileQuery(encodedName));
+            this.SetNotification("success", "Raport is save in file");
+            return RedirectToAction(nameof(Index));
         }
 
 

@@ -55,9 +55,9 @@
                 @Html.DisplayFor(modelItem => item.Payment)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    <a asp-controller="Lunchroom" asp-action="StudentsRaportToFile" asp-route-id="@item.Id" asp-route-encodedName="@item.LunchroomEncodedName" class="btn btn-primary">Zapisz do pliku</a>
+                @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
             </td>
         </tr>
 }
