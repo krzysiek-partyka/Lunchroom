@@ -10,10 +10,6 @@ namespace Lunchroom.Application.Student.Commands.AutomaticLunchesUpdateCommand
     public class AutomaticLunchesUpdateCommand : StudentDto, IRequest
     {
         public string EncodedName { get; set; }
-
-        public AutomaticLunchesUpdateCommand(string encodedName)
-        {
-            EncodedName = encodedName;
-        }
+        public int AutomaticUpdateLunchValue { get; set; }
     }
 }

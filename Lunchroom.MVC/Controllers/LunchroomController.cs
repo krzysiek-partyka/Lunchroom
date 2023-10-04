@@ -184,11 +184,11 @@ namespace Lunchroom.MVC.Controllers
         //}
 
         [HttpPost]
-        [Route("Lunchroom/{encodedName}/AutomaticUpdate")]
+        [Route("Lunchroom/{encodedName}/AutomaticLunchesUpdate")]
         public async Task<IActionResult> AutomaticLunchesUpdate(string encodedName)
         {
-            var command = await _mediator.Send(new AutomaticLunchesUpdateCommand(encodedName));
-            return Ok(command);
+            var command = await _mediator.Send(new AutomaticLunchesUpdateCommand() {EncodedName = encodedName});
+            return RedirectToAction(nameof(Index));
         }
 
         [HttpGet]

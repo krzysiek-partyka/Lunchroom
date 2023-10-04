@@ -1,6 +1,6 @@
-FirstName, Lastname, Lunches number, Payment
-      AdamMiauczyński     58,30
-     Marek   Zagroda      0,00
-      Adam     Tuwim     34,98
-  Krystian    Mordek     87,45
-     Magda     Masny     99,11
+Firstname, Lastname, Lunches number, Payment
+AdamMiauczyński58,30     
+Marek   Zagroda0,00      
+Adam     Tuwim34,98     
+Krystian    Mordek87,45     
+Magda     Masny99,11     

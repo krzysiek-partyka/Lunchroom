@@ -21,8 +21,8 @@ namespace Lunchroom.Application.Lunchroom
         public string? PostalCode { get; set; }
         public string? Phone { get; set; }
         public bool IsEditable { get; set; }
-        //[DisplayFormat(DataFormatString = "{0:HH:mm}", ApplyFormatInEditMode = true)]
         public DateTime LunchesUpdate { get; set; }
+        public bool IsAutomaticLunchesEnabled { get; set; }
 
     }
 }

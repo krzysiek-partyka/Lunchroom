@@ -29,15 +29,16 @@ namespace Lunchroom.Application.Services
         {
             using (StreamWriter writer = new StreamWriter(path))
             {
-                await writer.WriteLineAsync("FirstName, Lastname, Lunches number, Payment");
+                await writer.WriteLineAsync("Firstname, Lastname, Lunches number, Payment");
                 foreach (StudentDto student in students)
                 {
-                    string studentLine = student.FirstName.PadLeft(10) + student.LastName.PadLeft(10) + student.Payment.ToString().PadLeft(10);
+                    string studentLine = student.FirstName + student.LastName.PadLeft(10) + student.Payment.ToString().PadLeft(10);
                     await writer.WriteLineAsync(studentLine);
                 }
                 
             }
             
         }
+
     }
 }

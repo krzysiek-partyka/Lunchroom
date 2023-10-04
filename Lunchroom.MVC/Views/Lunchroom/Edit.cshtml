@@ -14,6 +14,10 @@
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input type="hidden" id="AutomaticLunchesEnabled" value="1" />
+
+            
             <div class="form-group m-3">
                 <label asp-for="Description" class="control-label"></label>
                 <input asp-for="Description" class="form-control" />
@@ -26,15 +30,16 @@
                 <span asp-validation-for="City" class="text-danger"></span>
             </div>
             <div class="form-group m-3">
-                <label asp-for="LunchesUpdate" class="control-label"></label>
+                <label asp-for="LunchesUpdate" class="control-label"></label> 
                 <div class="input-group">
-                    <input asp-for="LunchesUpdate" class="form-control" />
+                    <input type="time" asp-for="LunchesUpdate" class="form-control" />
                     <div class="input-group-append">
-                        <button type="button" class="btn btn-success" onclick="turnOn()">On</button>
-                        <button type="button" class="btn btn-danger" onclick="turnOff()">Off</button>
+                        <a class="btn btn-success" asp-controller="Lunchroom" asp-action="AutomaticLunchesUpdate" asp-route-encodedName="@Model.EncodedName" onclick="document.getElementById('AutomaticLunchesEnabled').value = 1">On</a>
+                        <button type="button" class="btn btn-danger" onclick="document.getElementById('AutomaticLunchesEnabled').value = 0">Off</button>
                     </div>
                 </div>
                 <span asp-validation-for="LunchesUpdate" class="text-danger"></span>
+
             </div>
 
             <div class="form-group m-3">
@@ -86,16 +91,3 @@
     <script src="~/js/Lunchroom/Edit.js"></script>
 
 }
-<script>
-    function turnOn() {
-       
-        var value = 1;
-        
-    }
-
-    function turnOff() {
-        
-        var value = 0;
-        
-    }
-</script>
