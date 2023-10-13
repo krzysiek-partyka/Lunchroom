@@ -10,3 +10,15 @@ D:\lunchroomMVC\Lunchroom.Domain\obj\Debug\net7.0\Lunchroom.Domain.dll
 D:\lunchroomMVC\Lunchroom.Domain\obj\Debug\net7.0\refint\Lunchroom.Domain.dll
 D:\lunchroomMVC\Lunchroom.Domain\obj\Debug\net7.0\Lunchroom.Domain.pdb
 D:\lunchroomMVC\Lunchroom.Domain\obj\Debug\net7.0\ref\Lunchroom.Domain.dll
+D:\Krzysio\Lunchroom\Lunchroom.Domain\bin\Debug\net7.0\Lunchroom.Domain.deps.json
+D:\Krzysio\Lunchroom\Lunchroom.Domain\bin\Debug\net7.0\Lunchroom.Domain.dll
+D:\Krzysio\Lunchroom\Lunchroom.Domain\bin\Debug\net7.0\Lunchroom.Domain.pdb
+D:\Krzysio\Lunchroom\Lunchroom.Domain\obj\Debug\net7.0\Lunchroom.Domain.csproj.AssemblyReference.cache
+D:\Krzysio\Lunchroom\Lunchroom.Domain\obj\Debug\net7.0\Lunchroom.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Krzysio\Lunchroom\Lunchroom.Domain\obj\Debug\net7.0\Lunchroom.Domain.AssemblyInfoInputs.cache
+D:\Krzysio\Lunchroom\Lunchroom.Domain\obj\Debug\net7.0\Lunchroom.Domain.AssemblyInfo.cs
+D:\Krzysio\Lunchroom\Lunchroom.Domain\obj\Debug\net7.0\Lunchroom.Domain.csproj.CoreCompileInputs.cache
+D:\Krzysio\Lunchroom\Lunchroom.Domain\obj\Debug\net7.0\Lunchroom.Domain.dll
+D:\Krzysio\Lunchroom\Lunchroom.Domain\obj\Debug\net7.0\refint\Lunchroom.Domain.dll
+D:\Krzysio\Lunchroom\Lunchroom.Domain\obj\Debug\net7.0\Lunchroom.Domain.pdb
+D:\Krzysio\Lunchroom\Lunchroom.Domain\obj\Debug\net7.0\ref\Lunchroom.Domain.dll
