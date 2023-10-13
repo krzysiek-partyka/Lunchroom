@@ -8,13 +8,8 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-            @{
-                var check = 0;
-                check = check + 1;
-            }
             <a asp-controller="Lunchroom" asp-action="StudentsRaportToFile" asp-route-id="@item.Id" asp-route-encodedName="@Model" class="btn btn-primary">Zapisz do pliku</a>
             @{
-                if (check > 0)
                     break;
             }
         </td>
