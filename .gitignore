@@ -397,3 +397,15 @@ FodyWeavers.xsd
 *.sln.iml
 /.vs/lunchroomMVC/v17/.suo
 /.vs/ProjectEvaluation/lunchroommvc.projects.v6.1
+/Lunchroom.MVC/obj/Debug/net7.0/Lunchroom.MVC.GeneratedMSBuildEditorConfig.editorconfig
+/Lunchroom.MVC/obj/Debug/net7.0/Lunchroom.MVC.csproj.AssemblyReference.cache
+/Lunchroom.MVC/obj/Debug/net7.0/Lunchroom.MVC.assets.cache
+/Lunchroom.Infrastructure/obj/Debug/net7.0/Lunchroom.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Lunchroom.Infrastructure/obj/Debug/net7.0/Lunchroom.Infrastructure.csproj.AssemblyReference.cache
+/Lunchroom.Infrastructure/obj/Debug/net7.0/Lunchroom.Infrastructure.assets.cache
+/Lunchroom.Domain/obj/Debug/net7.0/Lunchroom.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Lunchroom.Domain/obj/Debug/net7.0/Lunchroom.Domain.csproj.AssemblyReference.cache
+/Lunchroom.Domain/obj/Debug/net7.0/Lunchroom.Domain.assets.cache
+/Lunchroom.Application/obj/Debug/net7.0/Lunchroom.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Lunchroom.Application/obj/Debug/net7.0/Lunchroom.Application.csproj.AssemblyReference.cache
+/Lunchroom.Application/obj/Debug/net7.0/Lunchroom.Application.assets.cache
