@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\lunchroomMVC\\Lunchroom.MVC\\Lunchroom.MVC.csproj": {}
+    "D:\\Krzysio\\Lunchroom\\Lunchroom.MVC\\Lunchroom.MVC.csproj": {}
   },
   "projects": {
-    "D:\\lunchroomMVC\\Lunchroom.Application\\Lunchroom.Application.csproj": {
+    "D:\\Krzysio\\Lunchroom\\Lunchroom.Application\\Lunchroom.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\lunchroomMVC\\Lunchroom.Application\\Lunchroom.Application.csproj",
+        "projectUniqueName": "D:\\Krzysio\\Lunchroom\\Lunchroom.Application\\Lunchroom.Application.csproj",
         "projectName": "Lunchroom.Application",
-        "projectPath": "D:\\lunchroomMVC\\Lunchroom.Application\\Lunchroom.Application.csproj",
-        "packagesPath": "C:\\Users\\2021\\.nuget\\packages\\",
-        "outputPath": "D:\\lunchroomMVC\\Lunchroom.Application\\obj\\",
+        "projectPath": "D:\\Krzysio\\Lunchroom\\Lunchroom.Application\\Lunchroom.Application.csproj",
+        "packagesPath": "C:\\Users\\Domownicy\\.nuget\\packages\\",
+        "outputPath": "D:\\Krzysio\\Lunchroom\\Lunchroom.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\2021\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Domownicy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,8 +32,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\lunchroomMVC\\Lunchroom.Domain\\Lunchroom.Domain.csproj": {
-                "projectPath": "D:\\lunchroomMVC\\Lunchroom.Domain\\Lunchroom.Domain.csproj"
+              "D:\\Krzysio\\Lunchroom\\Lunchroom.Domain\\Lunchroom.Domain.csproj": {
+                "projectPath": "D:\\Krzysio\\Lunchroom\\Lunchroom.Domain\\Lunchroom.Domain.csproj"
               }
             }
           }
@@ -81,24 +81,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\lunchroomMVC\\Lunchroom.Domain\\Lunchroom.Domain.csproj": {
+    "D:\\Krzysio\\Lunchroom\\Lunchroom.Domain\\Lunchroom.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\lunchroomMVC\\Lunchroom.Domain\\Lunchroom.Domain.csproj",
+        "projectUniqueName": "D:\\Krzysio\\Lunchroom\\Lunchroom.Domain\\Lunchroom.Domain.csproj",
         "projectName": "Lunchroom.Domain",
-        "projectPath": "D:\\lunchroomMVC\\Lunchroom.Domain\\Lunchroom.Domain.csproj",
-        "packagesPath": "C:\\Users\\2021\\.nuget\\packages\\",
-        "outputPath": "D:\\lunchroomMVC\\Lunchroom.Domain\\obj\\",
+        "projectPath": "D:\\Krzysio\\Lunchroom\\Lunchroom.Domain\\Lunchroom.Domain.csproj",
+        "packagesPath": "C:\\Users\\Domownicy\\.nuget\\packages\\",
+        "outputPath": "D:\\Krzysio\\Lunchroom\\Lunchroom.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\2021\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Domownicy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -146,24 +146,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\lunchroomMVC\\Lunchroom.Infrastructure\\Lunchroom.Infrastructure.csproj": {
+    "D:\\Krzysio\\Lunchroom\\Lunchroom.Infrastructure\\Lunchroom.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\lunchroomMVC\\Lunchroom.Infrastructure\\Lunchroom.Infrastructure.csproj",
+        "projectUniqueName": "D:\\Krzysio\\Lunchroom\\Lunchroom.Infrastructure\\Lunchroom.Infrastructure.csproj",
         "projectName": "Lunchroom.Infrastructure",
-        "projectPath": "D:\\lunchroomMVC\\Lunchroom.Infrastructure\\Lunchroom.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\2021\\.nuget\\packages\\",
-        "outputPath": "D:\\lunchroomMVC\\Lunchroom.Infrastructure\\obj\\",
+        "projectPath": "D:\\Krzysio\\Lunchroom\\Lunchroom.Infrastructure\\Lunchroom.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Domownicy\\.nuget\\packages\\",
+        "outputPath": "D:\\Krzysio\\Lunchroom\\Lunchroom.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\2021\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Domownicy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -178,8 +178,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\lunchroomMVC\\Lunchroom.Application\\Lunchroom.Application.csproj": {
-                "projectPath": "D:\\lunchroomMVC\\Lunchroom.Application\\Lunchroom.Application.csproj"
+              "D:\\Krzysio\\Lunchroom\\Lunchroom.Application\\Lunchroom.Application.csproj": {
+                "projectPath": "D:\\Krzysio\\Lunchroom\\Lunchroom.Application\\Lunchroom.Application.csproj"
               }
             }
           }
@@ -229,24 +229,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\lunchroomMVC\\Lunchroom.MVC\\Lunchroom.MVC.csproj": {
+    "D:\\Krzysio\\Lunchroom\\Lunchroom.MVC\\Lunchroom.MVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\lunchroomMVC\\Lunchroom.MVC\\Lunchroom.MVC.csproj",
+        "projectUniqueName": "D:\\Krzysio\\Lunchroom\\Lunchroom.MVC\\Lunchroom.MVC.csproj",
         "projectName": "Lunchroom.MVC",
-        "projectPath": "D:\\lunchroomMVC\\Lunchroom.MVC\\Lunchroom.MVC.csproj",
-        "packagesPath": "C:\\Users\\2021\\.nuget\\packages\\",
-        "outputPath": "D:\\lunchroomMVC\\Lunchroom.MVC\\obj\\",
+        "projectPath": "D:\\Krzysio\\Lunchroom\\Lunchroom.MVC\\Lunchroom.MVC.csproj",
+        "packagesPath": "C:\\Users\\Domownicy\\.nuget\\packages\\",
+        "outputPath": "D:\\Krzysio\\Lunchroom\\Lunchroom.MVC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\2021\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Domownicy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -261,11 +261,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\lunchroomMVC\\Lunchroom.Application\\Lunchroom.Application.csproj": {
-                "projectPath": "D:\\lunchroomMVC\\Lunchroom.Application\\Lunchroom.Application.csproj"
+              "D:\\Krzysio\\Lunchroom\\Lunchroom.Application\\Lunchroom.Application.csproj": {
+                "projectPath": "D:\\Krzysio\\Lunchroom\\Lunchroom.Application\\Lunchroom.Application.csproj"
               },
-              "D:\\lunchroomMVC\\Lunchroom.Infrastructure\\Lunchroom.Infrastructure.csproj": {
-                "projectPath": "D:\\lunchroomMVC\\Lunchroom.Infrastructure\\Lunchroom.Infrastructure.csproj"
+              "D:\\Krzysio\\Lunchroom\\Lunchroom.Infrastructure\\Lunchroom.Infrastructure.csproj": {
+                "projectPath": "D:\\Krzysio\\Lunchroom\\Lunchroom.Infrastructure\\Lunchroom.Infrastructure.csproj"
               }
             }
           }
@@ -310,7 +310,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

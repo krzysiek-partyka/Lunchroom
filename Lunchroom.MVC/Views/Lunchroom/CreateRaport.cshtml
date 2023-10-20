@@ -5,10 +5,20 @@
 }
 
 <h1>CreateRaport</h1>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+            <a asp-controller="Lunchroom" asp-action="StudentsRaportToFile" asp-route-id="@item.Id" asp-route-encodedName="@Model" class="btn btn-primary">Zapisz do pliku</a>
+            @{
+                    break;
+            }
+        </td>
+            </tr>
+}
 
-@*<p>
-    <a asp-controller="Lunchroom" asp-action="StudentsRaportToFile" asp-route-id="@item.Id" asp-route-encodedName="@item.LunchroomEncodedName" class="btn btn-primary">Zapisz do pliku</a>
-</p>*@
+<p>
+    
+</p>
 <table class="table">
     <thead>
         <tr>
@@ -55,7 +65,7 @@
                 @Html.DisplayFor(modelItem => item.Payment)
             </td>
             <td>
-                    <a asp-controller="Lunchroom" asp-action="StudentsRaportToFile" asp-route-id="@item.Id" asp-route-encodedName="@item.LunchroomEncodedName" class="btn btn-primary">Zapisz do pliku</a>
+                   @*  <a asp-controller="Lunchroom" asp-action="StudentsRaportToFile" asp-route-id="@item.Id" asp-route-encodedName="@item.LunchroomEncodedName" class="btn btn-primary">Zapisz do pliku</a> *@
                 @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
             </td>
