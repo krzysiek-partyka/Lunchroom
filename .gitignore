@@ -396,3 +396,4 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 /.vs/lunchroomMVC/v17/.suo
+/.vs/ProjectEvaluation/lunchroommvc.projects.v6.1
