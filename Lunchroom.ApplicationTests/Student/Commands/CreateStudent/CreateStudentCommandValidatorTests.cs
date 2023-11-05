@@ -33,5 +33,30 @@ namespace Lunchroom.Application.Student.Commands.CreateStudent.Tests
             result.ShouldNotHaveAnyValidationErrors();
 
         }
+
+        [Fact()]
+        public void CreateStudent_WithNotValidCommand_ShouldHaveValidationError()
+        {
+            //arrange
+            var validator = new CreateStudentCommandValidator();
+            var command = new CreateStudentCommand()
+            {
+                FirstName = "",
+                LastName = "",
+                LunchroomEncodedName = null,
+
+            };
+
+            //action
+
+            var result = validator.TestValidate(command);
+
+            //assert
+
+            result.ShouldHaveValidationErrorFor(r => r.FirstName);
+            result.ShouldHaveValidationErrorFor(r => r.LastName);
+            result.ShouldHaveValidationErrorFor(r => r.LunchroomEncodedName);
+
+        }
     }
 }

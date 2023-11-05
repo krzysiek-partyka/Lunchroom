@@ -17,7 +17,7 @@ namespace Lunchroom.Application.Lunchroom.Commands.CreateLunchroom.Tests
         public void Validate_WithValidCommand_ShouldNotHaveValidationError()
         {
             //arrange
-            var repositoryMock = new Mock<LunchroomRepository>();
+            var repositoryMock = new Mock<ILunchroomRepository>();
             var validator = new CreateLunchroomCommandValidator(repositoryMock.Object);
             var command = new CreateLunchroomCommand()
             {
