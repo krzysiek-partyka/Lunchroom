@@ -409,3 +409,6 @@ FodyWeavers.xsd
 /Lunchroom.Application/obj/Debug/net7.0/Lunchroom.Application.GeneratedMSBuildEditorConfig.editorconfig
 /Lunchroom.Application/obj/Debug/net7.0/Lunchroom.Application.csproj.AssemblyReference.cache
 /Lunchroom.Application/obj/Debug/net7.0/Lunchroom.Application.assets.cache
+/.vs/lunchroomMVC/v17/TestStore/0/testlog.manifest
+/.vs/lunchroomMVC/v17/.futdcache.v2
+/.vs/lunchroomMVC/DesignTimeBuild/.dtbcache.v2
