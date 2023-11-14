@@ -20,7 +20,7 @@ const RenderStudents = (students, container) => {
     for (const student of students) {
         const classroomLabel = classroomNames[student.classroomName];
         const lunchroomEncodedName = container.data("encodedName");
-        
+
         container.append(
             `<div class="card border-secondary mb-3" style="max-width: 30rem;">
                 <div class="d-flex justify-content-between align-items-center">
@@ -46,7 +46,7 @@ const LoadStudents = () => {
     $.ajax({
         url: `/Lunchroom/${lunchroomEncodedName}/GetStudent`,
         type: 'get',
-        success: function (data) { 
+        success: function (data) {
             if (!data.length) {
                 container.html("There are no services for this Lunchroom")
             } else {
@@ -82,7 +82,7 @@ function addLunch(studentId) {
 
             LoadStudents()
             toastr["success"]("Lunch added succefully")
-            
+
         },
         error: function () {
 
@@ -100,10 +100,10 @@ function removeLunch(studentId) {
 
             LoadStudents()
             toastr["success"]("Lunch removed succefully")
-            
+
         },
         error: function () {
-            
+
             toastr["error"]("Something went wrong")
         }
     });

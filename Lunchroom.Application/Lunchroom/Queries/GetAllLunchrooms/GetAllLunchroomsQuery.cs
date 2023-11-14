@@ -1,8 +1,7 @@
 ﻿using MediatR;
 
-namespace Lunchroom.Application.Lunchroom.Queries.GetAllLunchrooms
+namespace Lunchroom.Application.Lunchroom.Queries.GetAllLunchrooms;
+
+public class GetAllLunchroomsQuery : IRequest<IEnumerable<LunchroomDto>>
 {
-    public class GetAllLunchroomsQuery : IRequest<IEnumerable<LunchroomDto>>
-    {
-    }
 }

@@ -2,7 +2,6 @@
 using Lunchroom.Domain.Interfaces;
 using MediatR;
 
-
 namespace Lunchroom.Application.Student.Queries.GetStudentById;
 
 public class GetStudentByIdQueryHandler : IRequestHandler<GetStudentByIdQuery, StudentDto>

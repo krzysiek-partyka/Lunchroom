@@ -1,5 +1,5 @@
-using Lunchroom.Infrastructure.Extensions;
 using Lunchroom.Application.Extensions;
+using Lunchroom.Infrastructure.Extensions;
 using Lunchroom.Infrastructure.Seeders;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -31,8 +31,8 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    "default",
+    "{controller=Home}/{action=Index}/{id?}");
 
 
 app.MapRazorPages();

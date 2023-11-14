@@ -21,8 +21,8 @@ public class LunchroomMappingProfile : Profile
                 PostalCode = src.PostalCode
             }));
 
-        CreateMap<Domain.Entities.Meal, LunchroomDto>()
-            .ForMember(e => e.IsEditable, opt => opt.MapFrom(src => (user != null && (user.IsInRole(Role.Moderator) || src.CreatedById == user.Id))))
+        CreateMap<Meal, LunchroomDto>()
+            .ForMember(e => e.IsEditable, opt => opt.MapFrom(src => user != null && (user.IsInRole(Role.Moderator) || src.CreatedById == user.Id)))
             .ForMember(e => e.Street, opt => opt.MapFrom(src => src.ContactDetails.Street))
             .ForMember(e => e.City, opt => opt.MapFrom(src => src.ContactDetails.City))
             .ForMember(e => e.PostalCode, opt => opt.MapFrom(src => src.ContactDetails.PostalCode))

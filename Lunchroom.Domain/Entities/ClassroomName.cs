@@ -1,14 +1,13 @@
-﻿namespace Lunchroom.Domain.Entities
+﻿namespace Lunchroom.Domain.Entities;
+
+public enum ClassroomName
 {
-    public enum ClassroomName
-    {
-        I,
-        II,
-        III,
-        IV,
-        V,
-        VI,
-        VII,
-        VIII
-    }
+    I,
+    II,
+    III,
+    IV,
+    V,
+    VI,
+    VII,
+    VIII
 }

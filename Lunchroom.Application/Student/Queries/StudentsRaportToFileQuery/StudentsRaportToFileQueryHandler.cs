@@ -33,7 +33,7 @@ public class StudentsRaportToFileQueryHandler : IRequestHandler<StudentsRaportTo
                 return d;
             });
 
-        await _studentService.StudentsRaportToFile(dtosWithPayment, $"Raport.txt");
+        await _studentService.StudentsRaportToFile(dtosWithPayment, "Raport.txt");
 
         return Unit.Value;
     }

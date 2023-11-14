@@ -1,7 +1,6 @@
 ﻿using FluentValidation;
 using Lunchroom.Domain.Interfaces;
 
-
 namespace Lunchroom.Application.Lunchroom.Commands.CreateLunchroom;
 
 public class CreateLunchroomCommandValidator : AbstractValidator<CreateLunchroomCommand>
@@ -19,10 +18,7 @@ public class CreateLunchroomCommandValidator : AbstractValidator<CreateLunchroom
         RuleFor(x => x.Name).Custom((value, context) =>
         {
             var existingName = repository.GetMealByName(value).Result;
-            if (existingName != null)
-            {
-                context.AddFailure($"{value} is not unique Name");
-            }
+            if (existingName != null) context.AddFailure($"{value} is not unique Name");
         });
     }
 }

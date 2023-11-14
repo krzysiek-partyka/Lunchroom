@@ -1,6 +1,5 @@
 ﻿using FluentValidation;
 
-
 namespace Lunchroom.Application.Student.Commands.CreateStudent;
 
 public class CreateStudentCommandValidator : AbstractValidator<CreateStudentCommand>

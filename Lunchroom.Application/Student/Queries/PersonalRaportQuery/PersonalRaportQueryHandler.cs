@@ -2,7 +2,6 @@
 using Lunchroom.Domain.Interfaces;
 using MediatR;
 
-
 namespace Lunchroom.Application.Student.Queries.PersonalRaportQuery;
 
 public class PersonalRaportQueryHandler : IRequestHandler<PersonalRaportQuery, StudentDto>

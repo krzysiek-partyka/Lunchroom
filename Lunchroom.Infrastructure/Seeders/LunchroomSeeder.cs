@@ -1,4 +1,5 @@
-﻿using Lunchroom.Infrastructure.Persistence;
+﻿using Lunchroom.Domain.Entities;
+using Lunchroom.Infrastructure.Persistence;
 
 namespace Lunchroom.Infrastructure.Seeders;
 
@@ -14,14 +15,13 @@ public class LunchroomSeeder
     public async Task Seed()
     {
         if (await _dbContext.Database.CanConnectAsync())
-        {
             if (!_dbContext.Lunchrooms.Any())
             {
-                var schoolLunchroom = new Domain.Entities.Meal()
+                var schoolLunchroom = new Meal
                 {
                     Name = "Stołowka Szkolna",
                     Description = "Stołow ka przy szkole nr 12 w Olsztynie",
-                    ContactDetails = new()
+                    ContactDetails = new LunchroomContactDetails
                     {
                         City = "Olsztyn",
                         Street = "Poznańska 23",
@@ -33,6 +33,5 @@ public class LunchroomSeeder
                 _dbContext.Add(schoolLunchroom);
                 await _dbContext.SaveChangesAsync();
             }
-        }
     }
 }

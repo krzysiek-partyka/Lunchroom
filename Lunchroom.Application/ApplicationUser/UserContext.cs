@@ -1,43 +1,35 @@
-﻿using Microsoft.AspNetCore.Http;
-using System.Security.Claims;
+﻿using System.Security.Claims;
+using Microsoft.AspNetCore.Http;
 
+namespace Lunchroom.Application.ApplicationUser;
 
-namespace Lunchroom.Application.ApplicationUser
+public interface IUserContext
 {
-    public interface IUserContext
+    CurrentUser? GetCurrentUser();
+}
+
+public class UserContext : IUserContext
+{
+    private readonly IHttpContextAccessor _httpContextAccessor;
+
+    public UserContext(IHttpContextAccessor httpContextAccessor)
     {
-        CurrentUser? GetCurrentUser();
+        _httpContextAccessor = httpContextAccessor;
     }
 
-    public class UserContext : IUserContext
+    public CurrentUser? GetCurrentUser()
     {
-        private readonly IHttpContextAccessor _httpContextAccessor;
+        var user = _httpContextAccessor.HttpContext?.User;
+        if (user == null) throw new InvalidOperationException();
 
-        public UserContext(IHttpContextAccessor httpContextAccessor)
-        {
-            _httpContextAccessor = httpContextAccessor;
-        }
+        if (user.Identity == null || !user.Identity.IsAuthenticated) return null;
 
-        public CurrentUser? GetCurrentUser()
-        {
-            var user = _httpContextAccessor.HttpContext?.User;
-            if (user == null)
-            {
-                throw new InvalidOperationException();
-            }
+        var id = user.FindFirst(u => u.Type == ClaimTypes.NameIdentifier)?.Value;
+        var email = user.FindFirst(u => u.Type == ClaimTypes.Email)?.Value;
+        var roles = user.Claims.Where(u => u.Type == ClaimTypes.Role).Select(u => u.Value);
 
-            if (user.Identity == null || !user.Identity.IsAuthenticated)
-            {
-                return null;
-            }
+        var currentUser = new CurrentUser(id, email, roles);
 
-            var id = user.FindFirst(u => u.Type == ClaimTypes.NameIdentifier)?.Value;
-            var email = user.FindFirst(u => u.Type == ClaimTypes.Email)?.Value;
-            var roles = user.Claims.Where(u => u.Type == ClaimTypes.Role).Select(u => u.Value);
-
-            var currentUser = new CurrentUser(id, email, roles);
-
-            return currentUser;
-        }
+        return currentUser;
     }
 }

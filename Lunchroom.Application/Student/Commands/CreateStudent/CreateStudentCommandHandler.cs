@@ -3,7 +3,6 @@ using Lunchroom.Domain.Entities;
 using Lunchroom.Domain.Interfaces;
 using MediatR;
 
-
 namespace Lunchroom.Application.Student.Commands.CreateStudent;
 
 public class CreateStudentCommandHandler : IRequestHandler<CreateStudentCommand>
@@ -25,18 +24,15 @@ public class CreateStudentCommandHandler : IRequestHandler<CreateStudentCommand>
 
         var user = _userContext.GetCurrentUser();
         var isEditable = user != null && (lunchroom.CreatedById == user.Id || user.IsInRole(Role.Moderator));
-        if (!isEditable)
-        {
-            return Unit.Value;
-        }
+        if (!isEditable) return Unit.Value;
 
 
         var enumValue = (int)request.ClassroomName!;
-        var student = new Domain.Entities.Student()
+        var student = new Domain.Entities.Student
         {
             FirstName = request.FirstName,
             LastName = request.LastName,
-            ClassroomName = (Domain.Entities.ClassroomName)enumValue,
+            ClassroomName = (ClassroomName)enumValue,
             LunchroomId = lunchroom.Id
         };
 

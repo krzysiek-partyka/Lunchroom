@@ -1,13 +1,11 @@
-﻿
-@using Lunchroom.Domain.Entities
+﻿@using Lunchroom.Domain.Entities
 @model Lunchroom.Application.Student.Commands.CreateStudent.CreateStudentCommand
-
 
 
 <div class="row">
     <div class="col-md-4">
         <form asp-action="_CreateStudent">
-            
+
         </form>
     </div>
 </div>
@@ -21,38 +19,39 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <form asp-action="CreateStudent">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="createStudentModalLabel">Create new Student</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                ...<div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-                <input asp-for="LunchroomEncodedName" class="form-control" type="hidden" />
-
-                <div class="form-group">
-                    <label asp-for="FirstName" class="control-label"></label>
-                    <input asp-for="FirstName" class="form-control" />
-                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="createStudentModalLabel">Create new Student</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="form-group">
-                    <label asp-for="LastName" class="control-label"></label>
-                    <input asp-for="LastName" class="form-control" />
-                    <span asp-validation-for="LastName" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="ClassroomName" class="control-label"></label>
+                <div class="modal-body">
+                    ...
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <input asp-for="LunchroomEncodedName" class="form-control" type="hidden"/>
+
+                    <div class="form-group">
+                        <label asp-for="FirstName" class="control-label"></label>
+                        <input asp-for="FirstName" class="form-control"/>
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="LastName" class="control-label"></label>
+                        <input asp-for="LastName" class="form-control"/>
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ClassroomName" class="control-label"></label>
                         <select asp-for="ClassroomName" class="form-control" asp-items="Html.GetEnumSelectList<ClassroomName>()">
-                    <option selected="selected" value="">Wybierz klasę</option>
+                            <option selected="selected" value="">Wybierz klasę</option>
                         </select>
-                    <span asp-validation-for="ClassroomName" class="text-danger"></span>
+                        <span asp-validation-for="ClassroomName" class="text-danger"></span>
+                    </div>
+
                 </div>
-                
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <input type="submit" value="Create" class="btn btn-primary"/>
-            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <input type="submit" value="Create" class="btn btn-primary"/>
+                </div>
             </form>
         </div>
     </div>

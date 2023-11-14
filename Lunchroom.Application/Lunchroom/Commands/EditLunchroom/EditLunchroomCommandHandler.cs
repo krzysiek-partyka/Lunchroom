@@ -22,10 +22,7 @@ public class EditLunchroomCommandHandler : IRequestHandler<EditLunchroomCommand>
 
         var user = _userContext.GetCurrentUser();
         var isEditable = user != null && (lunchroom.CreatedById == user.Id || user.IsInRole(Role.Moderator));
-        if (!isEditable)
-        {
-            return Unit.Value;
-        }
+        if (!isEditable) return Unit.Value;
 
         lunchroom.Description = request.Description;
         lunchroom.LunchPrice = decimal.Parse(request.LunchPrice);

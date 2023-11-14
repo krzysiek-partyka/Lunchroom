@@ -1,7 +1,7 @@
 ﻿using Lunchroom.Application.ApplicationUser;
+using Lunchroom.Domain.Entities;
 using Lunchroom.Domain.Interfaces;
 using MediatR;
-
 
 namespace Lunchroom.Application.Student.Commands.EditStudent;
 
@@ -30,7 +30,7 @@ public class EditStudentCommandHandler : IRequestHandler<EditStudentCommand>
         student.FirstName = request.FirstName;
         student.LastName = request.LastName;
         student.NumberOfLunches = request.NumberOfLunches;
-        student.ClassroomName = (Domain.Entities.ClassroomName)enumValue;
+        student.ClassroomName = (ClassroomName)enumValue;
 
         await _studentRepository.Commit();
 

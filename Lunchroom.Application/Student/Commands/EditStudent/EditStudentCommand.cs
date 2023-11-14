@@ -1,6 +1,5 @@
 ﻿using MediatR;
 
-
 namespace Lunchroom.Application.Student.Commands.EditStudent;
 
 public class EditStudentCommand : StudentDto, IRequest

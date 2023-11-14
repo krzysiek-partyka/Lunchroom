@@ -4,7 +4,6 @@ using Lunchroom.Domain.Entities;
 using Lunchroom.Domain.Interfaces;
 using MediatR;
 
-
 namespace Lunchroom.Application.Lunchroom.Commands.CreateLunchroom;
 
 public class CreateLunchroomCommandHandler : IRequestHandler<CreateLunchroomCommand>
@@ -23,10 +22,7 @@ public class CreateLunchroomCommandHandler : IRequestHandler<CreateLunchroomComm
     public async Task<Unit> Handle(CreateLunchroomCommand request, CancellationToken cancellationToken)
     {
         var currentUser = _userContext.GetCurrentUser();
-        if (currentUser is null || !currentUser.IsInRole(Role.Moderator))
-        {
-            return Unit.Value;
-        }
+        if (currentUser is null || !currentUser.IsInRole(Role.Moderator)) return Unit.Value;
 
         var lunchroom = _mapper.Map<Meal>(request);
         lunchroom.EncodeName();

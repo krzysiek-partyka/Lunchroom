@@ -1,4 +1,4 @@
-﻿@using Lunchroom.Application.Student.Commands.CreateStudent;
+﻿@using Lunchroom.Application.Student.Commands.CreateStudent
 @model Lunchroom.Application.Lunchroom.Commands.EditLunchroom.EditLunchroomCommand
 
 @{
@@ -9,30 +9,30 @@
 
 <h1>@Model.Name Edit</h1>
 
-<hr />
+<hr/>
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-            <input type="hidden" id="AutomaticLunchesEnabled" value="1" />
+            <input type="hidden" id="AutomaticLunchesEnabled" value="1"/>
 
-            
+
             <div class="form-group m-3">
                 <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
+                <input asp-for="Description" class="form-control"/>
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
 
             <div class="form-group m-3">
                 <label asp-for="City" class="control-label"></label>
-                <input asp-for="City" class="form-control" />
+                <input asp-for="City" class="form-control"/>
                 <span asp-validation-for="City" class="text-danger"></span>
             </div>
             <div class="form-group m-3">
-                <label asp-for="LunchesUpdate" class="control-label"></label> 
+                <label asp-for="LunchesUpdate" class="control-label"></label>
                 <div class="input-group">
-                    <input type="time" asp-for="LunchesUpdate" class="form-control" />
+                    <input type="time" asp-for="LunchesUpdate" class="form-control"/>
                     <div class="input-group-append">
                         <a class="btn btn-success" asp-controller="Lunchroom" asp-action="AutomaticLunchesUpdate" asp-route-encodedName="@Model.EncodedName" onclick="document.getElementById('AutomaticLunchesEnabled').value = 1">On</a>
                         <button type="button" class="btn btn-danger" onclick="document.getElementById('AutomaticLunchesEnabled').value = 0">Off</button>
@@ -46,7 +46,7 @@
                 <label asp-for="LunchPrice" class="control-label"></label>
                 <div class="input-group">
                     <div class="input-group">
-                        <input asp-for="LunchPrice" class="form-control" />
+                        <input asp-for="LunchPrice" class="form-control"/>
                         <div class="input-group-append">
                             <a class="btn btn-warning" asp-controller="Lunchroom" asp-action="CreateRaport" asp-route-encodedName="@Model.EncodedName">Raport</a>
                         </div>
@@ -54,24 +54,24 @@
                 </div>
                 <span asp-validation-for="LunchPrice" class="text-danger"></span>
             </div>
-            
+
             <div class="form-group m-3">
                 <label asp-for="Street" class="control-label"></label>
-                <input asp-for="Street" class="form-control" />
+                <input asp-for="Street" class="form-control"/>
                 <span asp-validation-for="Street" class="text-danger"></span>
             </div>
             <div class="form-group m-3">
                 <label asp-for="PostalCode" class="control-label"></label>
-                <input asp-for="PostalCode" class="form-control" />
+                <input asp-for="PostalCode" class="form-control"/>
                 <span asp-validation-for="PostalCode" class="text-danger"></span>
             </div>
             <div class="form-group m-3">
                 <label asp-for="Phone" class="control-label"></label>
-                <input asp-for="Phone" class="form-control" />
+                <input asp-for="Phone" class="form-control"/>
                 <span asp-validation-for="Phone" class="text-danger"></span>
             </div>
             <div class="form-group m-3">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-primary"/>
             </div>
         </form>
     </div>
@@ -79,14 +79,14 @@
 
 
 <div class="m-3">
-    <partial name="_CreateStudent" model="new CreateStudentCommand(){LunchroomEncodedName = Model.EncodedName}"/>
+    <partial name="_CreateStudent" model="new CreateStudentCommand { LunchroomEncodedName = Model.EncodedName }"/>
     <a asp-action="Index" class="btn btn-secondary">Back to List</a>
 </div>
 <h5>Students</h5>
 <div id="students" class="row" data-encoded-name="@Model.EncodedName" data-id="@Model.StudentId"></div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
 
     <script src="~/js/Lunchroom/Edit.js"></script>
 

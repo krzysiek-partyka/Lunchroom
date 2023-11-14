@@ -1,14 +1,13 @@
 ﻿using Lunchroom.MVC.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace Lunchroom.MVC.Extensions;
 
 public enum NotificationMessageType
 {
     Success,
-    Failure,
+    Failure
 }
 
 public static class ControllerExtensions

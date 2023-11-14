@@ -1,7 +1,6 @@
 ﻿using Lunchroom.Domain.Interfaces;
 using MediatR;
 
-
 namespace Lunchroom.Application.Student.Commands.AddLunch;
 
 public class AddLunchCommandHandler : IRequestHandler<AddLunchCommand>

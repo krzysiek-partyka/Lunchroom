@@ -2,7 +2,6 @@
 using Lunchroom.Domain.Interfaces;
 using MediatR;
 
-
 namespace Lunchroom.Application.Lunchroom.Queries.GetLunchroomByEncodedName;
 
 public class GetLunchroomByEncodedNameQueryHandler : IRequestHandler<GetLunchroomByEncodedNameQuery, LunchroomDto>

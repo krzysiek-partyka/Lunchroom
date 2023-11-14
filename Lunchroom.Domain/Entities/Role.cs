@@ -5,5 +5,5 @@ public enum Role
     Moderator,
     Admin,
     Owner,
-    User,
+    User
 }

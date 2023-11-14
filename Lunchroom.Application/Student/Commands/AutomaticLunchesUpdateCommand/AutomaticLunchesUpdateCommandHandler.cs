@@ -30,21 +30,14 @@ public class AutomaticLunchesUpdateCommandHandler : IRequestHandler<AutomaticLun
         {
             lunchroomDto.IsAutomaticLunchesEnabled = Convert.ToBoolean(request.AutomaticUpdateLunchValue);
 
-            if (!lunchroomDto.IsAutomaticLunchesEnabled)
-            {
-                break;
-            }
+            if (!lunchroomDto.IsAutomaticLunchesEnabled) break;
 
             await Task.Delay(TimeSpan.FromMinutes(1), cancellationToken);
         }
 
         if (lunchroom.LunchesUpdate.TimeOfDay == DateTime.Now.TimeOfDay)
-        {
             foreach (var student in students)
-            {
                 student.NumberOfLunches += 1;
-            }
-        }
 
         return Unit.Value;
     }
