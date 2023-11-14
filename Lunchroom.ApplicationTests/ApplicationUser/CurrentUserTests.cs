@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FluentAssertions;
+using Lunchroom.Domain.Entities;
 
 namespace Lunchroom.Application.ApplicationUser.Tests
 {
@@ -16,16 +17,15 @@ namespace Lunchroom.Application.ApplicationUser.Tests
         {
             //arrange
 
-            var currentUser = new CurrentUser("1","test@tests.com",new List<string> { "Admin", "User" });
+            var currentUser = new CurrentUser("1", "test@tests.com", new List<string> { "Admin", "User" });
 
             // act
 
-            var isInRole = currentUser.IsInRole("Admin");
+            var isInRole = currentUser.IsInRole(Role.Admin);
 
             //assert
 
             isInRole.Should().BeTrue();
-
         }
 
         [Fact()]
@@ -37,12 +37,11 @@ namespace Lunchroom.Application.ApplicationUser.Tests
 
             // act
 
-            var isInRole = currentUser.IsInRole("Moderator");
+            var isInRole = currentUser.IsInRole(Role.Moderator);
 
             //assert
 
             isInRole.Should().BeFalse();
-
         }
 
         [Fact()]
@@ -54,12 +53,11 @@ namespace Lunchroom.Application.ApplicationUser.Tests
 
             // act
 
-            var isInRole = currentUser.IsInRole("admin");
+            var isInRole = currentUser.IsInRole(Role.Admin);
 
             //assert
 
             isInRole.Should().BeFalse();
-
         }
     }
 }
