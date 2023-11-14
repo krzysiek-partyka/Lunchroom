@@ -412,3 +412,5 @@ FodyWeavers.xsd
 /.vs/lunchroomMVC/v17/TestStore/0/testlog.manifest
 /.vs/lunchroomMVC/v17/.futdcache.v2
 /.vs/lunchroomMVC/DesignTimeBuild/.dtbcache.v2
+obj/
+bin/
