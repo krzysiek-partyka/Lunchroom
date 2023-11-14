@@ -36,4 +36,8 @@
     <None Include="wwwroot\js\lunchroom\Details.js" />
   </ItemGroup>
 
+    <ItemGroup>
+        <Compile Remove="Controllers\StudentController.cs"/>
+    </ItemGroup>
+
 </Project>

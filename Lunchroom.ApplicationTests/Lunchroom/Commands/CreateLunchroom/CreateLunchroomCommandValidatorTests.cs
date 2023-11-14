@@ -28,7 +28,7 @@ namespace Lunchroom.Application.Lunchroom.Commands.CreateLunchroom.Tests
             };
 
             var repositoryMock = new Mock<ILunchroomRepository>();
-            repositoryMock.Setup(r => r.GetName("ValidName")).ReturnsAsync((Meal)null);
+            repositoryMock.Setup(r => r.GetMealByName("ValidName")).ReturnsAsync((Meal)null);
             var validator = new CreateLunchroomCommandValidator(repositoryMock.Object);
 
             // Action
@@ -61,9 +61,10 @@ namespace Lunchroom.Application.Lunchroom.Commands.CreateLunchroom.Tests
             //result.ShouldHaveValidationErrorFor(x => x.Name)
             //.WithErrorMessage("Name is not unique Name");
             result.ShouldHaveValidationErrorFor(r => r.Name);
-                result.ShouldHaveValidationErrorFor(r => r.Description);
+            result.ShouldHaveValidationErrorFor(r => r.Description);
             result.ShouldHaveValidationErrorFor(r => r.Phone);
         }
+
         [Fact()]
         public async Task Validate_WithExistingName_ShouldHaveValidationError()
         {
@@ -76,7 +77,7 @@ namespace Lunchroom.Application.Lunchroom.Commands.CreateLunchroom.Tests
                 Phone = "123456789"
             };
             var repositoryMock = new Mock<ILunchroomRepository>();
-            repositoryMock.Setup(r => r.GetName("Name")).ReturnsAsync(lunchroom);
+            repositoryMock.Setup(r => r.GetMealByName("Name")).ReturnsAsync(lunchroom);
             var validator = new CreateLunchroomCommandValidator(repositoryMock.Object);
 
             // action

@@ -3,14 +3,19 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
-namespace Lunchroom.MVC.Extensions
+namespace Lunchroom.MVC.Extensions;
+
+public enum NotificationMessageType
 {
-    public static class ControllerExtensions
+    Success,
+    Failure,
+}
+
+public static class ControllerExtensions
+{
+    public static void SetNotification(this Controller controller, NotificationMessageType type, string message)
     {
-        public static void SetNotification(this Controller controller, string type, string message)
-        {
-            var notification = new Notification(type, message);
-            controller.TempData["Notification"] = JsonConvert.SerializeObject(notification);
-        }
+        var notification = new Notification(type, message);
+        controller.TempData["Notification"] = JsonConvert.SerializeObject(notification);
     }
 }

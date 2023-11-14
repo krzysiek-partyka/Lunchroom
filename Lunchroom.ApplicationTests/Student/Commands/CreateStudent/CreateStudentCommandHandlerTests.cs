@@ -43,7 +43,7 @@ namespace Lunchroom.Application.Student.Commands.CreateStudent.Tests
 
             var studentRepositoryMock = new Mock<IStudentRepository>();
             var lunchroomRepositoryMock = new Mock<ILunchroomRepository>();
-            lunchroomRepositoryMock.Setup(x => x.GetStudentByEncodedName(command.LunchroomEncodedName))
+            lunchroomRepositoryMock.Setup(x => x.GetMealByEncodedName(command.LunchroomEncodedName))
                 .ReturnsAsync(lunchroom);
 
             var handler = new CreateStudentCommandHandler(studentRepositoryMock.Object, contextUserMock.Object, lunchroomRepositoryMock.Object);
@@ -55,7 +55,6 @@ namespace Lunchroom.Application.Student.Commands.CreateStudent.Tests
 
             result.Should().Be(Unit.Value);
             studentRepositoryMock.Verify(x => x.CreateStudent(It.IsAny<Domain.Entities.Student>()), Times.Once);
-
         }
 
         [Fact()]
@@ -85,7 +84,7 @@ namespace Lunchroom.Application.Student.Commands.CreateStudent.Tests
 
             var studentRepositoryMock = new Mock<IStudentRepository>();
             var lunchroomRepositoryMock = new Mock<ILunchroomRepository>();
-            lunchroomRepositoryMock.Setup(x => x.GetStudentByEncodedName(command.LunchroomEncodedName))
+            lunchroomRepositoryMock.Setup(x => x.GetMealByEncodedName(command.LunchroomEncodedName))
                 .ReturnsAsync(lunchroom);
 
             var handler = new CreateStudentCommandHandler(studentRepositoryMock.Object, contextUserMock.Object, lunchroomRepositoryMock.Object);
@@ -97,7 +96,6 @@ namespace Lunchroom.Application.Student.Commands.CreateStudent.Tests
 
             result.Should().Be(Unit.Value);
             studentRepositoryMock.Verify(x => x.CreateStudent(It.IsAny<Domain.Entities.Student>()), Times.Once);
-
         }
     }
 }

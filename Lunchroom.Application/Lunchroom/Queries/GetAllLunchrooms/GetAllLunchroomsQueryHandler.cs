@@ -1,11 +1,6 @@
 ﻿using AutoMapper;
 using Lunchroom.Domain.Interfaces;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Lunchroom.Application.Lunchroom.Queries.GetAllLunchrooms
 {
@@ -19,11 +14,12 @@ namespace Lunchroom.Application.Lunchroom.Queries.GetAllLunchrooms
             _lunchroomRepository = lunchroomRepository;
             _mapper = mapper;
         }
+
         public async Task<IEnumerable<LunchroomDto>> Handle(GetAllLunchroomsQuery request, CancellationToken cancellationToken)
         {
-            var lunchrooms = await _lunchroomRepository.GetAll();
-            var dtos = _mapper.Map<IEnumerable<LunchroomDto>>(lunchrooms);
-            return dtos;
+            var lunchrooms = await _lunchroomRepository.GetAllMeals();
+            return _mapper.Map<IEnumerable<LunchroomDto>>(lunchrooms);
+            ;
         }
     }
 }

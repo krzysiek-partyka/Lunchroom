@@ -1,13 +1,8 @@
-﻿using Lunchroom.Application.Student;
-using Lunchroom.Domain.Entities;
+﻿using Lunchroom.Domain.Entities;
 using Lunchroom.Domain.Interfaces;
 using Lunchroom.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Lunchroom.Infrastructure.Repositories
 {
@@ -32,13 +27,10 @@ namespace Lunchroom.Infrastructure.Repositories
         public async Task<Student> GetStudentById(int id) =>
             await _dbContext.Students.FirstAsync(s => s.Id == id);
 
-        public async Task<IEnumerable<Student>> GetStudentsByLunchroomEncodedName(string encodedName) =>
-           await _dbContext.Students
-            .Where(s => s.Lunchroom.EncodedName == encodedName).ToListAsync();
+        public Task<IEnumerable<Student>> GetStudentsByLunchroomEncodedName(string encodedName) =>
+            Task.FromResult<IEnumerable<Student>>(_dbContext.Students
+                .Where(s => s.Lunchroom.EncodedName == encodedName));
 
-        public async Task<IEnumerable<Student>> GetStudents() =>
-            await _dbContext.Students.ToListAsync();
-
-
+        public async Task<IEnumerable<Student>> GetStudents() => await _dbContext.Students.ToListAsync();
     }
 }

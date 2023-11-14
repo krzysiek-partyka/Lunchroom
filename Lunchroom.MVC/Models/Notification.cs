@@ -1,14 +1,10 @@
-﻿namespace Lunchroom.MVC.Models
-{
-    public class Notification
-    {
-        public Notification(string type, string message)
-        {
-            Type = type;
-            Message = message;
-        }
+﻿using Lunchroom.MVC.Extensions;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
-        public string Type { get; set; }
-        public string Message { get; set; }
-    }
-}
+namespace Lunchroom.MVC.Models;
+
+public sealed record Notification(
+    [JsonConverter(typeof(StringEnumConverter))]
+    NotificationMessageType Type,
+    string Message);

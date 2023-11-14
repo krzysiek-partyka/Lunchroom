@@ -1,30 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Lunchroom.Domain.Entities;
 
-namespace Lunchroom.Application.ApplicationUser
+namespace Lunchroom.Application.ApplicationUser;
+
+public class CurrentUser
 {
-    public class CurrentUser
+    public CurrentUser(string? id, string? email, IEnumerable<string> roles)
     {
-        public CurrentUser(string id, string email, IEnumerable<string> roles)
-        {
-            Id = id;
+        Id = id;
 
-            Email = email;
+        Email = email;
 
-            Roles = roles;
+        Roles = roles;
+    }
 
-        }
-        public string Id { get; set; }
-        public string Email { get; set; }
-        public IEnumerable<string> Roles { get; set; }
+    public string? Id { get; set; }
+    public string? Email { get; set; }
+    public IEnumerable<string> Roles { get; set; }
 
-        public bool IsInRole (string role)
-        {
-            return Roles.Contains(role);
-        }
-
+    public bool IsInRole(Role role)
+    {
+        return Roles.Contains(role.ToString());
     }
 }
